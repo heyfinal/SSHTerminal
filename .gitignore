@@ -58,3 +58,23 @@ docs/archive/
 DerivedData/
 .DS_Store
 *.xcuserstate
+build*.log
+
+# Build artifacts
+build/
+*.log
+DerivedData/
+*.xcuserstate
+*.xcworkspace
+
+# CocoaPods
+Podfile
+Podfile.lock
+Pods/
+
+# Development scripts
+*.sh
+project.yml
+
+# Archives
+docs/archive/
