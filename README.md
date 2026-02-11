@@ -25,20 +25,46 @@ Modern iOS SSH terminal with native PTY integration and AI-powered command assis
 
 ## Quick Start
 
-1. **Add Server**: Tap "+" to add SSH credentials
-2. **Connect**: Tap server to connect
-3. **Use AI**: Tap ⭐ button and type natural language
-4. **Execute**: Commands auto-execute or use keyboard shortcuts
+### 1. Clone & Build
+
+```bash
+git clone https://github.com/heyfinal/SSHTerminal.git
+cd SSHTerminal
+open SSHTerminal.xcodeproj
+# Press ⌘ + R to build and run
+```
+
+### 2. Setup AI Features (Optional)
+
+For natural language command conversion:
+
+```bash
+./setup_ollama.sh  # Local setup (Mac/Linux)
+# or
+./setup_ollama_remote.sh  # Remote server setup
+```
+
+See [AI Setup Guide](docs/AI_SETUP_GUIDE.md) for detailed instructions.
+
+### 3. Add Server & Connect
+
+1. Tap **"+"** to add SSH server
+2. Enter credentials
+3. Tap server to connect
+4. Use **⭐ button** for AI commands!
 
 ## AI Command Examples
 
-```
+```bash
 "network config"     → ip addr show
 "disk space"         → df -h
 "memory usage"       → free -h
 "running processes"  → ps aux
 "wifi status"        → iwconfig
 ```
+
+**Setup Required**: Run `./setup_ollama.sh` first (10 minutes, one-time)  
+**Documentation**: See [AI Setup Guide](docs/AI_SETUP_GUIDE.md)
 
 ## Requirements
 
