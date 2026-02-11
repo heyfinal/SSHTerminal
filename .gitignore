@@ -54,3 +54,7 @@ temp/
 .vscode/
 .idea/
 
+docs/archive/
+DerivedData/
+.DS_Store
+*.xcuserstate

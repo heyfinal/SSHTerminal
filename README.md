@@ -1,158 +1,117 @@
-# SSH Terminal
+# SSHTerminal
 
-A professional iOS SSH terminal app with AI assistance, built with SwiftUI and modern Swift concurrency.
+Modern iOS SSH terminal with native PTY integration and AI-powered command assistance.
 
 ## Features
 
-### 🔐 Security
-- SSH password authentication
-- SSH public key authentication (RSA, ECDSA, Ed25519)
-- Host key validation (TOFU pattern)
-- Secure Keychain storage for credentials
-- MITM attack detection
+### 🖥️ Native Terminal Emulation
+- **SwiftTerm Integration**: Full ANSI escape code support
+- **PTY Sessions**: Proper terminal dimensions (no more 80-column wrapping!)
+- **Bidirectional Communication**: Real-time terminal I/O
+- **Custom Keyboard Toolbar**: Tab, Esc, arrow keys, Ctrl shortcuts
 
-### 💻 Terminal
-- Full-featured SSH client using Citadel
-- Professional command prompt (user@host:dir$)
-- Color-coded output (ANSI colors)
-- Command history (up/down arrows)
-- Blinking cursor
-- Clear screen support
-- Directory tracking
+### 🤖 AI Command Assistant (Free!)
+- **Natural Language → Bash**: Type "show disk space" → `df -h`
+- **Local Ollama Server**: 100% free using Kali server
+- **DeepSeek Coder 6.7B**: Optimized for code/command generation
+- **Quick Templates**: Instant commands for network, disk, memory, cpu, etc.
+- **Magic Wand Button**: ⭐ in keyboard toolbar for easy access
 
-### 🤖 AI Features
-- OpenAI GPT-4o / GPT-4o-mini integration
-- Smart command suggestions
-- Error explanations
-- Natural language to command translation
-- AI chat assistant
-- Rate limiting (20 req/min)
-
-### 📦 Advanced Features
+### 🔐 SSH Features
+- Password and key-based authentication
+- Host key verification and storage
 - Multiple server profiles
 - Session management
-- Command snippets library (15 pre-loaded)
-- Command history search
-- Dark mode optimized UI
-- Haptic feedback
-- VoiceOver accessibility
-- Dynamic Type support
 
-## Tech Stack
+## Quick Start
 
-- **Language**: Swift 6.0
-- **Framework**: SwiftUI (iOS 17+)
-- **SSH Library**: Citadel 0.11.1
-- **Terminal**: SwiftTerm 1.6.0
-- **Architecture**: MVVM + Clean Architecture
-- **Concurrency**: Swift 6 strict concurrency
+1. **Add Server**: Tap "+" to add SSH credentials
+2. **Connect**: Tap server to connect
+3. **Use AI**: Tap ⭐ button and type natural language
+4. **Execute**: Commands auto-execute or use keyboard shortcuts
+
+## AI Command Examples
+
+```
+"network config"     → ip addr show
+"disk space"         → df -h
+"memory usage"       → free -h
+"running processes"  → ps aux
+"wifi status"        → iwconfig
+```
 
 ## Requirements
 
-- iOS 17.0+
+- iOS 15.0+
 - Xcode 15.0+
-- Swift 6.0+
+- Swift 5.9+
 
-## Installation
+## Dependencies
 
-1. Clone the repository:
-```bash
-git clone https://github.com/heyfinal/SSHTerminal.git
-cd SSHTerminal
-```
+- [Citadel](https://github.com/orlandos-nl/Citadel) (forked for PTY API access)
+- [SwiftTerm](https://github.com/migueldeicaza/SwiftTerm) (native terminal emulator)
+- Ollama server (optional - for AI features)
 
-2. Open in Xcode:
-```bash
-open SSHTerminal.xcodeproj
-```
+## Architecture
 
-3. Build and run (⌘R)
+### Core Services
+- **SSHService**: Connection management, PTY session creation
+- **PTYTerminalView**: SwiftTerm wrapper with TerminalViewDelegate
+- **CommandAIService**: Natural language → bash conversion
 
-## Configuration
-
-### AI Features (Optional)
-To use AI features, add your OpenAI API key:
-1. Open app Settings
-2. Navigate to AI Settings
-3. Enter your OpenAI API key
-
-### SSH Keys (Optional)
-To use SSH key authentication:
-1. Go to server settings
-2. Select "SSH Key" authentication
-3. Import your private key from Files app
-
-## Project Structure
-
-```
-SSHTerminal/
-├── App/                    # App entry point
-├── Core/                   # Models, Services, Repositories
-│   ├── Models/            # Data models
-│   ├── Services/          # Business logic
-│   └── Repositories/      # Data persistence
-├── Features/              # UI Features
-│   ├── ServerList/        # Server management
-│   ├── Terminal/          # Terminal interface
-│   ├── AI/               # AI assistant
-│   ├── Onboarding/       # First-run experience
-│   └── Settings/         # App settings
-└── Resources/            # Assets, Info.plist
-```
-
-## Security Notes
-
-- Passwords stored securely in iOS Keychain
-- SSH keys encrypted with Keychain
-- Host keys validated on first connection
-- No credentials stored in plain text
-- MITM attack detection via host key fingerprinting
+### Key Technical Details
+- Uses local Citadel fork with exposed PTY APIs
+- `@unchecked Sendable` concurrency model for NIO types
+- Ollama endpoint: `http://***REMOVED***:11434`
+- Model: `deepseek-coder:6.7b`
 
 ## Development
 
-### Run Tests
 ```bash
-xcodebuild test -project SSHTerminal.xcodeproj -scheme SSHTerminal
+# Clone
+git clone https://github.com/heyfinal/SSHTerminal.git
+
+# Open in Xcode
+open SSHTerminal.xcodeproj
+
+# Build & Run
+⌘ + R
 ```
 
-### Build for Release
-```bash
-xcodebuild archive -project SSHTerminal.xcodeproj -scheme SSHTerminal
-```
+## Documentation
 
-## Roadmap
+- [Development History](docs/DEVELOPMENT_HISTORY.md)
+- [Build & Launch Guide](docs/BUILD_AND_LAUNCH.md)
+- [Archived Logs](docs/archive/)
 
-- [ ] Interactive PTY support (vim, htop, nano)
-- [ ] SFTP file browser
-- [ ] Port forwarding UI
-- [ ] iCloud sync
-- [ ] Widgets & Shortcuts
-- [ ] Multiple sessions/tabs
-- [ ] Session recording
+## Testing
 
-## Credits
+Test server credentials (Kali):
+- Host: `***REMOVED***`
+- User: `daniel`
+- Password: `***REMOVED***`
 
-Built with:
-- [Citadel](https://github.com/Joannis/Citadel) - SSH client for Swift
-- [SwiftTerm](https://github.com/migueldeicaza/SwiftTerm) - Terminal emulator
+## Recent Updates
+
+### v0.2.0 (Feb 11, 2026)
+- ✅ Added Ollama AI command conversion
+- ✅ Magic wand button in keyboard toolbar
+- ✅ Free, local LLM integration
+
+### v0.1.0 (Feb 11, 2026)
+- ✅ Fixed terminal formatting with PTY integration
+- ✅ SwiftTerm native terminal emulator
+- ✅ Proper terminal dimensions
+- ✅ Bidirectional SSH ↔ Terminal communication
 
 ## License
 
-MIT License - See LICENSE file for details
+MIT
 
 ## Author
 
-Daniel Gillaspy (@heyfinal)
+Daniel (@heyfinal)
 
-## Development Timeline
+---
 
-- **Phase 1**: Foundation (SwiftUI, MVVM) - Complete
-- **Phase 2**: SSH Integration (Citadel) - Complete
-- **Phase 3**: Terminal UI - Complete
-- **Phase 4**: AI Integration - Complete
-- **Phase 5**: Advanced Features - Complete
-- **Phase 6**: Beta Polish - Complete
-- **Security Audit**: Complete (2026-02-11)
-
-Built autonomously with parallel AI agents in ~70 minutes + security hardening.
-
+**Note**: This app uses a local Ollama server for AI features. The server runs on a Kali machine at ***REMOVED*** with deepseek-coder:6.7b, dolphin-mistral:7b-v2.8, and tinyllama models.
