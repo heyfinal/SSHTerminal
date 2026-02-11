@@ -488,7 +488,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				C9088F0D415CF5955D2F6608 /* XCRemoteSwiftPackageReference "SwiftTerm" */,
-				3C514F148C0DA05615B42929 /* XCLocalSwiftPackageReference "citadel-pty-fork" */,
+				DE3AB3874DBCE10C1C3A65A8 /* XCRemoteSwiftPackageReference "Citadel" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9FE12FA91B590D7AC4C9299F /* Products */;
@@ -761,13 +761,6 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		3C514F148C0DA05615B42929 /* XCLocalSwiftPackageReference "citadel-pty-fork" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../../citadel-pty-fork";
-		};
-/* End XCLocalSwiftPackageReference section */
-
 /* Begin XCRemoteSwiftPackageReference section */
 		A55D5FD92D9603F7E6E07BE2 /* XCRemoteSwiftPackageReference "Citadel" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -783,6 +776,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.6.0;
+			};
+		};
+		DE3AB3874DBCE10C1C3A65A8 /* XCRemoteSwiftPackageReference "Citadel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/heyfinal/Citadel.git";
+			requirement = {
+				branch = "pty-public-api";
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
