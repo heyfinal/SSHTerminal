@@ -1,3 +1,12 @@
+```
+                                                   
+          |    |                   o          |    
+,---.,---.|---.|--- ,---.,---.,-.-..,---.,---.|    
+`---.`---.|   ||    |---'|    | | |||   |,---||    
+`---'`---'`   '`---'`---'`    ` ' '``   '`---^`---'
+                                                   
+```
+
 # SSHTerminal
 
 Modern iOS SSH terminal with **native PTY integration** and **AI-powered command assistance**.
@@ -53,7 +62,25 @@ AI:  df -h
 
 ## 🚀 Quick Start
 
-### 1. Clone & Build
+### 🎖️ Elite Installation Methods
+
+**One-command install with AI assistants:**
+
+```bash
+# Claude Code
+claude "clone & build https://github.com/heyfinal/SSHTerminal.git"
+
+# GitHub Codex
+codex "clone & build https://github.com/heyfinal/SSHTerminal.git"
+
+# GitHub Copilot CLI
+copilot "clone & build https://github.com/heyfinal/SSHTerminal.git"
+
+# Or with auto-launch
+copilot "clone & build & launch https://github.com/heyfinal/SSHTerminal.git"
+```
+
+### 1. Traditional Clone & Build
 
 ```bash
 git clone https://github.com/heyfinal/SSHTerminal.git
