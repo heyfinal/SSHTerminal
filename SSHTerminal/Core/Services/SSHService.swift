@@ -249,6 +249,32 @@ class SSHService: ObservableObject {
         activeSessions.removeValue(forKey: session.id)
     }
     
+    /// Get the SSH client for a session (for PTY creation)
+    func getClient(for session: SSHSession) -> SSHClient? {
+        return clients[session.id]
+    }
+    
+    /// Create a PTY session for interactive shell
+    func createPTYSession(
+        for session: SSHSession,
+        terminalSize: (cols: Int, rows: Int)
+    ) async throws -> PTYSession {
+        guard let client = clients[session.id] else {
+            throw SSHError.connectionFailed("Client not found")
+        }
+        
+        return await withUnsafeContinuation { continuation in
+            Task {
+                let pty = PTYSession(
+                    session: session,
+                    client: client,
+                    terminalSize: terminalSize
+                )
+                continuation.resume(returning: pty)
+            }
+        }
+    }
+    
     func executeCommand(_ command: String, in session: SSHSession) async throws -> String {
         guard session.state == .connected else {
             throw SSHError.disconnected

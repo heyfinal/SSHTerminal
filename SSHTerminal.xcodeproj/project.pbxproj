@@ -23,6 +23,7 @@
 		431109736B3FC49C6A27F618 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617BBF612D755D568BBB3525 /* LaunchScreenView.swift */; };
 		49129304CAA9EF9245CA04FD /* SFTPService.swift.disabled in Resources */ = {isa = PBXBuildFile; fileRef = F56FE7607413648E3B9C060D /* SFTPService.swift.disabled */; };
 		506B5A349A73578DDC114683 /* CommandSuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BF7D71C6D27352D673701 /* CommandSuggestionView.swift */; };
+		5456594884EAD1EF70FA6E59 /* PTYTerminalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FB4D4E28F909CC325A5B18 /* PTYTerminalView.swift */; settings = {COMPILER_FLAGS = "-Xfrontend -disable-actor-data-race-checks"; }; };
 		5E0B337AB036FD23B7798AFD /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AC849B048E1B57AC84294C /* AIService.swift */; };
 		5F42EC10A04323C31093B725 /* SnippetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F34BD7FC2E31A46C24D60F /* SnippetRepository.swift */; };
 		5FB73B08AEE28CCF09C20F7B /* AnimationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F7D3B5750D3E6FC5FAF6B3 /* AnimationConstants.swift */; };
@@ -32,6 +33,7 @@
 		6B243E493273DE0124FAC8DA /* Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C640054FB04FEACD24DFE5 /* Snippet.swift */; };
 		76A4D9E669976FE119701653 /* PortForwardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7867CE32A714DB626A2956D /* PortForwardingView.swift */; };
 		7B9DB0785C8E9C02DB5F0553 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DF43F726D0B4B2699DFDD /* HapticManager.swift */; };
+		7BCD0025BE722CEB4002EA51 /* PTYSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A6E9F36ED7346334B3E20B /* PTYSession.swift */; };
 		8165E9C0FA491E482D169A2A /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C49CC3A4BE07942661982E /* EmptyStateView.swift */; };
 		81A11B70CA1A106684CB205C /* TerminalSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F84E299A677FCD41F1EB4EB /* TerminalSettingsView.swift */; };
 		8647A4C8B153CEFF89101D44 /* AIAssistantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE9CE374E659CFEE1A57260 /* AIAssistantView.swift */; };
@@ -85,12 +87,14 @@
 		570D8870BECDE682409C514D /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		60178DEC163EB95264AC6991 /* PortForwardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortForwardService.swift; sourceTree = "<group>"; };
 		617BBF612D755D568BBB3525 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		65FB4D4E28F909CC325A5B18 /* PTYTerminalView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PTYTerminalView.swift; path = SSHTerminal/Features/Terminal/Views/PTYTerminalView.swift; sourceTree = SOURCE_ROOT; };
 		78AC849B048E1B57AC84294C /* AIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIService.swift; sourceTree = "<group>"; };
 		812DF43F726D0B4B2699DFDD /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		87723E06DA549437D1FF2D36 /* SSHSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSHSession.swift; sourceTree = "<group>"; };
 		87C44FD628082559B6D017C1 /* TerminalKeyboardToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalKeyboardToolbar.swift; sourceTree = "<group>"; };
 		8CDE9395DFC4F3179FB3651C /* EnhancedTerminalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedTerminalView.swift; sourceTree = "<group>"; };
 		935820C0D15BDEFF59311DC1 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		94A6E9F36ED7346334B3E20B /* PTYSession.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PTYSession.swift; sourceTree = "<group>"; };
 		9A991E86255677E1930542A7 /* SessionTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTabView.swift; sourceTree = "<group>"; };
 		9DEDACBE0B113EC3C75A9B11 /* ServerProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerProfile.swift; sourceTree = "<group>"; };
 		9F84E299A677FCD41F1EB4EB /* TerminalSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalSettingsView.swift; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 				87C44FD628082559B6D017C1 /* TerminalKeyboardToolbar.swift */,
 				9F84E299A677FCD41F1EB4EB /* TerminalSettingsView.swift */,
 				AFEE4EC27E99A01A074D1219 /* TerminalView.swift */,
+				65FB4D4E28F909CC325A5B18 /* PTYTerminalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,6 +235,7 @@
 				4C2F38B771EF5864A90DB3D8 /* KeychainService.swift */,
 				A46E1BEAA1333114C111A6E9 /* SSHKeyManager.swift */,
 				F71E18B3C144AFE1CB9AED58 /* SSHService.swift */,
+				94A6E9F36ED7346334B3E20B /* PTYSession.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -478,10 +484,11 @@
 			mainGroup = ECD3B0160665EE6A65167627;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				A55D5FD92D9603F7E6E07BE2 /* XCRemoteSwiftPackageReference "Citadel" */,
 				C9088F0D415CF5955D2F6608 /* XCRemoteSwiftPackageReference "SwiftTerm" */,
+				3C514F148C0DA05615B42929 /* XCLocalSwiftPackageReference "citadel-pty-fork" */,
 			);
 			preferredProjectObjectVersion = 77;
+			productRefGroup = 9FE12FA91B590D7AC4C9299F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -556,6 +563,8 @@
 				97DE45096BAC5CC2CB71FF59 /* TerminalViewModel.swift in Sources */,
 				B741170177B79760F093F1B0 /* TermsOfServiceView.swift in Sources */,
 				DABD342C91CF87735361B4CB /* WelcomeView.swift in Sources */,
+				7BCD0025BE722CEB4002EA51 /* PTYSession.swift in Sources */,
+				5456594884EAD1EF70FA6E59 /* PTYTerminalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,6 +630,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -677,6 +687,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = minimal;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -696,7 +707,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.sshterminal;
 				SDKROOT = iphoneos;
-				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_STRICT_CONCURRENCY = minimal;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -717,7 +728,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.sshterminal;
 				SDKROOT = iphoneos;
-				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_STRICT_CONCURRENCY = minimal;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -745,6 +756,13 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		3C514F148C0DA05615B42929 /* XCLocalSwiftPackageReference "citadel-pty-fork" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../citadel-pty-fork";
+		};
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
 		A55D5FD92D9603F7E6E07BE2 /* XCRemoteSwiftPackageReference "Citadel" */ = {
