@@ -42,11 +42,12 @@ enum SSHError: Error, LocalizedError {
 
 // MARK: - Host Key Management
 
-final class HostKeyManager {
+final class HostKeyManager: @unchecked Sendable {
     static let shared = HostKeyManager()
 
     private let userDefaults = UserDefaults.standard
     private let storageKey = "ssh_known_hosts"
+    private let queue = DispatchQueue(label: "com.sshterminal.hostkeymanager")
 
     private init() {}
 
@@ -132,16 +133,17 @@ class SSHService: ObservableObject {
                 guard let keyInfo = keyInfo else {
                     throw SSHError.invalidConfiguration
                 }
-                // Load the private key from storage
-                guard let keyData = try? Data(contentsOf: URL(fileURLWithPath: keyInfo.privateKeyPath)) else {
+                // Load the private key from keychain via SSHKeyManager
+                let keyManager = SSHKeyManager.shared
+                guard let keyData = try? keyManager.loadKeyData(for: keyInfo, passphrase: keyPassphrase),
+                      let privateKeyString = String(data: keyData, encoding: .utf8) else {
                     throw SSHError.invalidConfiguration
                 }
-                guard let privateKeyString = String(data: keyData, encoding: .utf8) else {
-                    throw SSHError.invalidConfiguration
-                }
+                // Use Citadel's RSA authentication with the raw key
+                let privateKey = try Insecure.RSA.PrivateKey(sshRsa: privateKeyString)
                 authMethod = SSHAuthenticationMethod.rsa(
                     username: server.username,
-                    privateKey: .init(sshRsa: privateKeyString, passphrase: keyPassphrase)
+                    privateKey: privateKey
                 )
             }
 
@@ -170,7 +172,6 @@ class SSHService: ObservableObject {
 
             // Store host key fingerprint for future verification
             // This implements Trust On First Use (TOFU) pattern
-            let hostKey = "\(server.host):\(server.port)"
             if hostKeyManager.getStoredFingerprint(for: server.host, port: server.port) == nil {
                 // First connection - store a placeholder (actual fingerprint would come from Citadel)
                 hostKeyManager.storeFingerprint("trusted-\(Date().timeIntervalSince1970)", for: server.host, port: server.port)
@@ -211,7 +212,7 @@ class SSHService: ObservableObject {
 
     /// Respond to pending host key approval
     func respondToHostKeyApproval(approved: Bool) {
-        guard var approval = pendingHostKeyApproval else { return }
+        guard let approval = pendingHostKeyApproval else { return }
         if approved {
             hostKeyManager.storeFingerprint(approval.fingerprint, for: approval.host, port: approval.port)
         }

@@ -66,17 +66,31 @@ struct AISettingsView: View {
                             Text(model.displayName).tag(model)
                         }
                     }
-                    
+
                     HStack {
-                        Text("Cost per 1K tokens")
+                        Text("Input Cost (per 1K)")
                         Spacer()
-                        Text("$\(String(format: "%.4f", aiService.selectedModel.costPer1kTokens))")
+                        Text("$\(String(format: "%.5f", aiService.selectedModel.costPer1kInputTokens))")
+                            .foregroundColor(.secondary)
+                    }
+
+                    HStack {
+                        Text("Output Cost (per 1K)")
+                        Spacer()
+                        Text("$\(String(format: "%.5f", aiService.selectedModel.costPer1kOutputTokens))")
+                            .foregroundColor(.secondary)
+                    }
+
+                    HStack {
+                        Text("Max Context")
+                        Spacer()
+                        Text("\(aiService.selectedModel.maxContextLength / 1000)K tokens")
                             .foregroundColor(.secondary)
                     }
                 } header: {
                     Text("Model Selection")
                 } footer: {
-                    Text("GPT-4 is most capable but costs more. GPT-3.5 Turbo offers good balance.")
+                    Text("GPT-4o is most capable. GPT-4o Mini offers great balance of cost and quality.")
                 }
                 
                 // Usage Stats

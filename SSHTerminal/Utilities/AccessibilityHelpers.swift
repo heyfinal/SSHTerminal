@@ -76,16 +76,19 @@ extension View {
 
 enum AccessibilityAnnouncement {
     /// Announce a message to VoiceOver
+    @MainActor
     static func announce(_ message: String) {
         UIAccessibility.post(notification: .announcement, argument: message)
     }
 
     /// Announce screen change
+    @MainActor
     static func announceScreenChange(_ message: String? = nil) {
         UIAccessibility.post(notification: .screenChanged, argument: message)
     }
 
     /// Announce layout change
+    @MainActor
     static func announceLayoutChange(_ focusElement: Any? = nil) {
         UIAccessibility.post(notification: .layoutChanged, argument: focusElement)
     }
@@ -215,6 +218,7 @@ struct AccessibilitySettings {
 
 // MARK: - Terminal-Specific Accessibility
 
+@MainActor
 enum TerminalAccessibility {
     /// Generate accessibility label for terminal output
     static func labelForOutput(_ text: String, type: String) -> String {

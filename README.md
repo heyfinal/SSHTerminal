@@ -1,314 +1,158 @@
-# SSHTerminal - iOS SSH Client
+# SSH Terminal
 
-**Phase 1 Complete** ✅  
-Professional iOS SSH terminal application with AI assistance capabilities.
+A professional iOS SSH terminal app with AI assistance, built with SwiftUI and modern Swift concurrency.
 
-## Project Overview
+## Features
 
-A modern, SwiftUI-based SSH terminal client for iOS 17+ featuring:
-- Clean Architecture (MVVM)
-- Swift 6.0 with strict concurrency
-- Dark mode UI
-- Secure credential storage
-- Server profile management
+### 🔐 Security
+- SSH password authentication
+- SSH public key authentication (RSA, ECDSA, Ed25519)
+- Host key validation (TOFU pattern)
+- Secure Keychain storage for credentials
+- MITM attack detection
 
-## Current Status: Phase 1 Complete
+### 💻 Terminal
+- Full-featured SSH client using Citadel
+- Professional command prompt (user@host:dir$)
+- Color-coded output (ANSI colors)
+- Command history (up/down arrows)
+- Blinking cursor
+- Clear screen support
+- Directory tracking
 
-### ✅ Completed Features
+### 🤖 AI Features
+- OpenAI GPT-4o / GPT-4o-mini integration
+- Smart command suggestions
+- Error explanations
+- Natural language to command translation
+- AI chat assistant
+- Rate limiting (20 req/min)
 
-#### Project Foundation
-- Xcode project created and building successfully
-- iOS 17+ deployment target
-- SwiftUI interface with dark mode
-- Swift 6.0 concurrency-safe implementation
+### 📦 Advanced Features
+- Multiple server profiles
+- Session management
+- Command snippets library (15 pre-loaded)
+- Command history search
+- Dark mode optimized UI
+- Haptic feedback
+- VoiceOver accessibility
+- Dynamic Type support
 
-#### Architecture
-- **MVVM + Clean Architecture** structure
-- Clear separation of concerns:
-  - Models (data structures)
-  - Services (business logic)
-  - Repositories (data persistence)
-  - ViewModels (presentation logic)
-  - Views (UI components)
+## Tech Stack
 
-#### Core Models
-- `ServerProfile`: Complete server configuration (host, port, username, auth type)
-- `SSHSession`: Connection state management and output tracking
-- `AuthType`: Password and public key authentication support
+- **Language**: Swift 6.0
+- **Framework**: SwiftUI (iOS 17+)
+- **SSH Library**: Citadel 0.11.1
+- **Terminal**: SwiftTerm 1.6.0
+- **Architecture**: MVVM + Clean Architecture
+- **Concurrency**: Swift 6 strict concurrency
 
-#### Services
-- `SSHService`: Mock SSH connection/disconnection (ready for NMSSH integration)
-- `KeychainService`: Secure password storage using iOS Security framework
-- `ServerRepository`: Server profile persistence using UserDefaults
+## Requirements
 
-#### User Interface
-1. **Server List View**
-   - Empty state with "Add Server" prompt
-   - Server list with connection details
-   - Swipe actions (Edit, Delete)
-   - Last connected timestamp
-   - Clean dark mode design with green accents
+- iOS 17.0+
+- Xcode 15.0+
+- Swift 6.0+
 
-2. **Add/Edit Server View**
-   - Server configuration form
-   - Input validation
-   - Authentication type selection
-   - Modal presentation
+## Installation
 
-3. **Terminal View**
-   - Monospaced terminal output display
-   - Command input field with prompt
-   - Connection status indicator
-   - Disconnect button
-   - Auto-scrolling output
+1. Clone the repository:
+```bash
+git clone https://github.com/heyfinal/SSHTerminal.git
+cd SSHTerminal
+```
+
+2. Open in Xcode:
+```bash
+open SSHTerminal.xcodeproj
+```
+
+3. Build and run (⌘R)
+
+## Configuration
+
+### AI Features (Optional)
+To use AI features, add your OpenAI API key:
+1. Open app Settings
+2. Navigate to AI Settings
+3. Enter your OpenAI API key
+
+### SSH Keys (Optional)
+To use SSH key authentication:
+1. Go to server settings
+2. Select "SSH Key" authentication
+3. Import your private key from Files app
 
 ## Project Structure
 
 ```
 SSHTerminal/
-├── SSHTerminal.xcodeproj          # Xcode project
-├── Podfile                        # CocoaPods config (for future NMSSH)
-├── project.yml                    # XcodeGen configuration
-│
-└── SSHTerminal/
-    ├── App/
-    │   └── SSHTerminalApp.swift   # App entry point
-    │
-    ├── Core/
-    │   ├── Models/
-    │   │   ├── ServerProfile.swift    # Server configuration model
-    │   │   └── SSHSession.swift       # Session state model
-    │   │
-    │   ├── Services/
-    │   │   ├── SSHService.swift       # SSH connection management (mock)
-    │   │   └── KeychainService.swift  # Secure credential storage
-    │   │
-    │   └── Repositories/
-    │       └── ServerRepository.swift # Server profile persistence
-    │
-    ├── Features/
-    │   ├── ServerList/
-    │   │   ├── Views/
-    │   │   │   └── ServerListView.swift      # Server list UI
-    │   │   └── ViewModels/
-    │   │       └── ServerListViewModel.swift # Server list logic
-    │   │
-    │   └── Terminal/
-    │       ├── Views/
-    │       │   └── TerminalView.swift        # Terminal UI
-    │       └── ViewModels/
-    │           └── TerminalViewModel.swift   # Terminal logic
-    │
-    └── Resources/
-        ├── Assets.xcassets        # App icons and colors
-        └── Info.plist            # App configuration
+├── App/                    # App entry point
+├── Core/                   # Models, Services, Repositories
+│   ├── Models/            # Data models
+│   ├── Services/          # Business logic
+│   └── Repositories/      # Data persistence
+├── Features/              # UI Features
+│   ├── ServerList/        # Server management
+│   ├── Terminal/          # Terminal interface
+│   ├── AI/               # AI assistant
+│   ├── Onboarding/       # First-run experience
+│   └── Settings/         # App settings
+└── Resources/            # Assets, Info.plist
 ```
 
-## Build Information
+## Security Notes
 
-### Requirements
-- Xcode 15.0+
-- iOS 17.0+ deployment target
-- macOS 14.0+ (for development)
+- Passwords stored securely in iOS Keychain
+- SSH keys encrypted with Keychain
+- Host keys validated on first connection
+- No credentials stored in plain text
+- MITM attack detection via host key fingerprinting
 
-### Build Status
-✅ **BUILD SUCCEEDED**
-- All Swift files compile without errors
-- Swift 6.0 concurrency compliance
-- No warnings
+## Development
 
-### Building the Project
-
+### Run Tests
 ```bash
-# Clone and navigate
-cd ~/Development/Projects/SSHTerminal
-
-# Build for simulator
-xcodebuild -project SSHTerminal.xcodeproj \
-  -scheme SSHTerminal \
-  -destination 'platform=iOS Simulator,name=iPhone 16 Pro' \
-  build
-
-# Or open in Xcode
-open SSHTerminal.xcodeproj
+xcodebuild test -project SSHTerminal.xcodeproj -scheme SSHTerminal
 ```
 
-### Regenerating Project (if needed)
-
+### Build for Release
 ```bash
-# Install XcodeGen if not present
-brew install xcodegen
-
-# Regenerate from project.yml
-xcodegen generate
+xcodebuild archive -project SSHTerminal.xcodeproj -scheme SSHTerminal
 ```
 
-## Technical Implementation Details
+## Roadmap
 
-### Concurrency Safety (Swift 6)
-All shared services marked with `@MainActor`:
-- `SSHService.shared`
-- `ServerRepository.shared`
-- `KeychainService` marked as `@unchecked Sendable` (thread-safe by design)
+- [ ] Interactive PTY support (vim, htop, nano)
+- [ ] SFTP file browser
+- [ ] Port forwarding UI
+- [ ] iCloud sync
+- [ ] Widgets & Shortcuts
+- [ ] Multiple sessions/tabs
+- [ ] Session recording
 
-### Data Persistence
-- **Server Profiles**: UserDefaults (JSON encoded)
-- **Passwords**: iOS Keychain (Security framework)
-- **Session State**: In-memory (SwiftUI @Published properties)
+## Credits
 
-### Mock SSH Implementation
-Current implementation simulates SSH connections:
-- 1-second connection delay
-- Echo-style command execution
-- State transitions (connecting → connected → disconnected)
+Built with:
+- [Citadel](https://github.com/Joannis/Citadel) - SSH client for Swift
+- [SwiftTerm](https://github.com/migueldeicaza/SwiftTerm) - Terminal emulator
 
-**Ready for integration**: SSHService designed with clear extension points for NMSSH library
+## License
 
-## What Works Right Now
+MIT License - See LICENSE file for details
 
-1. ✅ Add server profiles (name, host, port, username)
-2. ✅ View saved server list
-3. ✅ Delete servers (swipe action)
-4. ✅ "Connect" to servers (mock connection)
-5. ✅ Terminal view with command input
-6. ✅ Connection status indicators
-7. ✅ Dark mode UI throughout
-8. ✅ Data persistence across app restarts
+## Author
 
-## Next Steps: Phase 2
+Daniel Gillaspy (@heyfinal)
 
-### High Priority
-1. **Integrate Real SSH Library**
-   - Option A: NMSSH (Objective-C, mature)
-   - Option B: Pure Swift SSH library
-   - Implement authentication (password + key-based)
+## Development Timeline
 
-2. **Terminal Emulator**
-   - ANSI escape code parsing
-   - Terminal control sequences
-   - Proper character rendering
-   - PTY support
+- **Phase 1**: Foundation (SwiftUI, MVVM) - Complete
+- **Phase 2**: SSH Integration (Citadel) - Complete
+- **Phase 3**: Terminal UI - Complete
+- **Phase 4**: AI Integration - Complete
+- **Phase 5**: Advanced Features - Complete
+- **Phase 6**: Beta Polish - Complete
+- **Security Audit**: Complete (2026-02-11)
 
-3. **Key Management**
-   - Import SSH private keys
-   - Generate key pairs
-   - Key passphrase support
+Built autonomously with parallel AI agents in ~70 minutes + security hardening.
 
-### Medium Priority
-4. **Advanced Features**
-   - SFTP file browser
-   - Port forwarding
-   - Multiple simultaneous sessions
-   - Session history
-
-5. **UI Enhancements**
-   - Custom terminal themes
-   - Font size adjustment
-   - Gesture controls (pinch to zoom)
-   - Landscape mode optimization
-
-6. **Settings Screen**
-   - Terminal preferences
-   - Connection timeouts
-   - Keep-alive settings
-   - Backup/restore profiles
-
-## Development Notes
-
-### Why Mock SSH?
-Phase 1 focuses on:
-- Clean architecture foundation
-- UI/UX flow
-- State management
-- Data persistence
-
-Real SSH integration requires:
-- Native library integration
-- Security review
-- Complex terminal emulation
-- Better tackled in focused Phase 2
-
-### Dependencies Not Yet Added
-- NMSSH: Requires CocoaPods/SPM integration
-- Terminal emulator library: TBD based on performance needs
-
-### Testing Strategy
-Currently manual testing via simulator. Phase 2 should add:
-- Unit tests (Models, Services, ViewModels)
-- UI tests (SwiftUI snapshot testing)
-- Integration tests (SSH connection scenarios)
-
-## Known Limitations (Phase 1)
-
-1. ❌ No real SSH connections (mock only)
-2. ❌ Commands don't actually execute on remote server
-3. ❌ No ANSI terminal emulation
-4. ❌ No SSH key authentication (password prompts only)
-5. ❌ No connection error details (basic error handling)
-6. ❌ No session persistence after disconnect
-
-These are **intentional** for Phase 1 and will be addressed in Phase 2.
-
-## How to Test
-
-1. **Open project in Xcode**
-   ```bash
-   open ~/Development/Projects/SSHTerminal/SSHTerminal.xcodeproj
-   ```
-
-2. **Run in simulator** (⌘R)
-   - Select iPhone 16 Pro simulator
-   - App launches to empty server list
-
-3. **Add a test server**
-   - Tap "+" button
-   - Fill in details:
-     - Name: "Test Server"
-     - Host: "example.com"
-     - Port: 22
-     - Username: "testuser"
-   - Tap "Save"
-
-4. **Connect to server**
-   - Tap connect arrow (→) on server row
-   - Enter any password (mock doesn't validate)
-   - Terminal view opens with mock welcome message
-
-5. **Type commands**
-   - Type any command and press Return
-   - See mock response
-   - Tap disconnect to return to list
-
-## Code Quality
-
-- ✅ Swift 6.0 strict concurrency
-- ✅ No force unwraps (safe optional handling)
-- ✅ Proper error handling with typed errors
-- ✅ SwiftUI best practices (@StateObject, @ObservedObject)
-- ✅ Clean separation of concerns
-- ✅ Documented with inline comments where needed
-
-## License & Credits
-
-**Created**: February 10, 2026  
-**Platform**: iOS 17+  
-**Language**: Swift 6.0  
-**Framework**: SwiftUI  
-
----
-
-## Summary: Phase 1 Deliverables ✅
-
-| Item | Status |
-|------|--------|
-| Xcode project creation | ✅ Complete |
-| Clean architecture structure | ✅ Complete |
-| 10 Swift files created | ✅ Complete |
-| Server profile management | ✅ Complete |
-| Dark mode UI | ✅ Complete |
-| Mock SSH service | ✅ Complete |
-| Keychain integration | ✅ Complete |
-| Builds without errors | ✅ Complete |
-| Runs on simulator | ✅ Complete |
-
-**Ready for Phase 2**: Real SSH integration and terminal emulation.

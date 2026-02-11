@@ -26,6 +26,7 @@
 		5E0B337AB036FD23B7798AFD /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AC849B048E1B57AC84294C /* AIService.swift */; };
 		5F42EC10A04323C31093B725 /* SnippetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F34BD7FC2E31A46C24D60F /* SnippetRepository.swift */; };
 		5FB73B08AEE28CCF09C20F7B /* AnimationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F7D3B5750D3E6FC5FAF6B3 /* AnimationConstants.swift */; };
+		60E9548A480CBD9B4908E9A8 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA67BC7F6D954AF9A1F45EB6 /* AppConfig.swift */; };
 		68449DF3288CD04DCB971296 /* ServerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81A1F0485548BC3415AA7B3 /* ServerRepository.swift */; };
 		6A318B8DDDEF7E15334C12D9 /* TerminalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEE4EC27E99A01A074D1219 /* TerminalView.swift */; };
 		6B243E493273DE0124FAC8DA /* Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C640054FB04FEACD24DFE5 /* Snippet.swift */; };
@@ -95,6 +96,7 @@
 		9F84E299A677FCD41F1EB4EB /* TerminalSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalSettingsView.swift; sourceTree = "<group>"; };
 		A46E1BEAA1333114C111A6E9 /* SSHKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSHKeyManager.swift; sourceTree = "<group>"; };
 		A7867CE32A714DB626A2956D /* PortForwardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortForwardingView.swift; sourceTree = "<group>"; };
+		AA67BC7F6D954AF9A1F45EB6 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		AFEE4EC27E99A01A074D1219 /* TerminalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalView.swift; sourceTree = "<group>"; };
 		B0EB3E835E04C2FCA30F2036 /* TerminalEmulatorView.swift.disabled */ = {isa = PBXFileReference; path = TerminalEmulatorView.swift.disabled; sourceTree = "<group>"; };
 		B2BDCEBDA49506DC1BBD0F02 /* TermsOfServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceView.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 		47897D48130FC5EC2314BC50 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				AA67BC7F6D954AF9A1F45EB6 /* AppConfig.swift */,
 				36EC99A84B8BFA1A977BD562 /* Models */,
 				79635F480181D39B70BD90D7 /* Repositories */,
 				647F29F8DFFA3B5B737CB146 /* Services */,
@@ -359,6 +362,7 @@
 				5383DD47AC09876F7037F41D /* AccessibilityHelpers.swift */,
 				D4F7D3B5750D3E6FC5FAF6B3 /* AnimationConstants.swift */,
 				812DF43F726D0B4B2699DFDD /* HapticManager.swift */,
+				E2D3BDB6C2DEBEB687DA7CDF /* Extensions */,
 				E7BD75F3CD93AEDC6E81EE5E /* Views */,
 			);
 			path = Utilities;
@@ -378,6 +382,13 @@
 				BD81E5BEF2E9734A59C3D727 /* ServerListView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E2D3BDB6C2DEBEB687DA7CDF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E58CFFFA81F32A307E51A9D9 /* Features */ = {
@@ -454,7 +465,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1600;
 			};
 			buildConfigurationList = 23482F29F3B7E6D91BD4E7F4 /* Build configuration list for PBXProject "SSHTerminal" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -505,6 +516,7 @@
 				9752EADB28F54CC881E692F5 /* AboutView.swift in Sources */,
 				9D05340B2441FDA32C5A9BE6 /* AccessibilityHelpers.swift in Sources */,
 				5FB73B08AEE28CCF09C20F7B /* AnimationConstants.swift in Sources */,
+				60E9548A480CBD9B4908E9A8 /* AppConfig.swift in Sources */,
 				C0EDCE16E8A905B65A9C0795 /* AppIconGenerator.swift in Sources */,
 				D50666115ED7C58F7FCE1168 /* AppearanceSettingsView.swift in Sources */,
 				EE2C178F53943B3953F25262 /* BackupSettingsView.swift in Sources */,
@@ -675,6 +687,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				INFOPLIST_FILE = SSHTerminal/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -683,7 +696,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.sshterminal;
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 5.10;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -694,6 +708,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				INFOPLIST_FILE = SSHTerminal/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -702,7 +717,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.sshterminal;
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 5.10;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -736,7 +752,7 @@
 			repositoryURL = "https://github.com/orlandos-nl/Citadel.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.7.1;
+				minimumVersion = 0.11.1;
 			};
 		};
 		C9088F0D415CF5955D2F6608 /* XCRemoteSwiftPackageReference "SwiftTerm" */ = {
@@ -744,7 +760,7 @@
 			repositoryURL = "https://github.com/migueldeicaza/SwiftTerm.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.7;
+				minimumVersion = 1.6.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

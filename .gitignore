@@ -1,24 +1,56 @@
 # Xcode
-*.xcuserstate
-*.xcworkspace/xcuserdata/
-*.xcodeproj/xcuserdata/
-*.xcodeproj/project.xcworkspace/xcuserdata/
-DerivedData/
-.build/
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/project.xcworkspace/
+*.xcworkspace/*
+!*.xcworkspace/contents.xcworkspacedata
+!*.xcworkspace/xcshareddata/
 
-# Swift Package Manager
-.swiftpm/
-Packages/
-Package.resolved
+# Build
+build/
+DerivedData/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+xcuserdata/
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
 
 # CocoaPods
 Pods/
+*.xcworkspace
+
+# Swift Package Manager
+.swiftpm/
+.build/
+Package.resolved
+
+# Logs
+*.log
+build_*.log
 
 # macOS
 .DS_Store
+*.swp
+*.swo
+*~
 
-# Credentials
+# Secrets (DO NOT COMMIT)
 *.pem
 *.key
-id_rsa*
-known_hosts
+!project.yml
+config.json
+secrets/
+
+# Temporary
+tmp/
+temp/
+*.tmp
+
+# IDE
+.vscode/
+.idea/
+
