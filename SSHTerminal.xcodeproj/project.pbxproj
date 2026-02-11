@@ -40,7 +40,7 @@
 		8647A4C8B153CEFF89101D44 /* AIAssistantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE9CE374E659CFEE1A57260 /* AIAssistantView.swift */; };
 		8FFB4E9B0845C4FA3DDCB526 /* ServerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD81E5BEF2E9734A59C3D727 /* ServerListView.swift */; };
 		9395EEF284474B7643250B47 /* ErrorExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2156F6656DE4B6B910320D /* ErrorExplanationView.swift */; };
-		96CC14A04B716C0065FE5CCB /* Citadel in Frameworks */ = {isa = PBXBuildFile; productRef = 00979A172975A146DC1C5B06 /* Citadel */; };
+		96CC14A04B716C0065FE5CCB /* Citadel in Frameworks */ = {isa = PBXBuildFile; productRef = GITHUB_CITADEL_REF /* Citadel */; };
 		9752EADB28F54CC881E692F5 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105E56C33AC2AD9FC044561C /* AboutView.swift */; };
 		97DE45096BAC5CC2CB71FF59 /* TerminalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19FCF4AEEFFB556E5B4D1B4 /* TerminalViewModel.swift */; };
 		9D05340B2441FDA32C5A9BE6 /* AccessibilityHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5383DD47AC09876F7037F41D /* AccessibilityHelpers.swift */; };
@@ -460,7 +460,7 @@
 			);
 			name = SSHTerminal;
 			packageProductDependencies = (
-				00979A172975A146DC1C5B06 /* Citadel */,
+				GITHUB_CITADEL_REF /* Citadel */,
 				70F001191F279ED7C7A52B0E /* SwiftTerm */,
 			);
 			productName = SSHTerminal;
@@ -760,6 +760,16 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+/* Begin XCRemoteSwiftPackageReference section */
+		GITHUB_CITADEL_REF /* XCRemoteSwiftPackageReference "Citadel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/heyfinal/Citadel.git";
+			requirement = {
+				branch = "pty-public-api";
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
 		A55D5FD92D9603F7E6E07BE2 /* XCRemoteSwiftPackageReference "Citadel" */ = {
@@ -789,7 +799,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		00979A172975A146DC1C5B06 /* Citadel */ = {
+		GITHUB_CITADEL_REF /* Citadel */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A55D5FD92D9603F7E6E07BE2 /* XCRemoteSwiftPackageReference "Citadel" */;
 			productName = Citadel;
