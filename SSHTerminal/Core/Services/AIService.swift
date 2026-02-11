@@ -7,6 +7,7 @@ class AIService: ObservableObject {
 
     @Published var isEnabled: Bool = false
     @Published var selectedModel: AIModel = .gpt4oMini
+    @Published var selectedProvider: AIProvider = .openai
     @Published var totalTokensUsed: Int = 0
     @Published var estimatedCost: Double = 0.0
     @Published var isRateLimited: Bool = false
@@ -16,10 +17,39 @@ class AIService: ObservableObject {
 
     // Configuration
     struct Config {
-        static let apiEndpoint = "https://api.openai.com/v1/chat/completions"
+        static let openaiEndpoint = "https://api.openai.com/v1/chat/completions"
+        static let ollamaEndpoint = "http://***REMOVED***:11434/api/chat"
         static let maxRequestsPerMinute = 20
         static let rateLimitWindowSeconds: TimeInterval = 60
         static let requestTimeoutSeconds: TimeInterval = 30
+    }
+    
+    enum AIProvider: String, CaseIterable, Identifiable {
+        case openai = "OpenAI"
+        case ollama = "Ollama (Kali)"
+        
+        var id: String { rawValue }
+        
+        var displayName: String {
+            switch self {
+            case .openai: return "OpenAI (Cloud)"
+            case .ollama: return "Ollama (Kali - Free)"
+            }
+        }
+        
+        var requiresAPIKey: Bool {
+            switch self {
+            case .openai: return true
+            case .ollama: return false
+            }
+        }
+        
+        var endpoint: String {
+            switch self {
+            case .openai: return Config.openaiEndpoint
+            case .ollama: return Config.ollamaEndpoint
+            }
+        }
     }
 
     // Rate limiting state
@@ -27,12 +57,27 @@ class AIService: ObservableObject {
     private let rateLimitQueue = DispatchQueue(label: "com.sshterminal.ratelimit")
 
     enum AIModel: String, CaseIterable, Identifiable {
+        // OpenAI Models
         case gpt4o = "gpt-4o"
         case gpt4oMini = "gpt-4o-mini"
         case gpt4Turbo = "gpt-4-turbo"
         case gpt35Turbo = "gpt-3.5-turbo"
+        
+        // Ollama Models (Kali Server)
+        case deepseekCoder = "deepseek-coder:6.7b"
+        case dolphinMistral = "dolphin-mistral:7b-v2.8"
+        case tinyllama = "tinyllama:latest"
 
         var id: String { rawValue }
+        
+        var provider: AIProvider {
+            switch self {
+            case .gpt4o, .gpt4oMini, .gpt4Turbo, .gpt35Turbo:
+                return .openai
+            case .deepseekCoder, .dolphinMistral, .tinyllama:
+                return .ollama
+            }
+        }
 
         var displayName: String {
             switch self {
@@ -40,6 +85,9 @@ class AIService: ObservableObject {
             case .gpt4oMini: return "GPT-4o Mini (Fast & Cheap)"
             case .gpt4Turbo: return "GPT-4 Turbo (Balanced)"
             case .gpt35Turbo: return "GPT-3.5 Turbo (Legacy)"
+            case .deepseekCoder: return "DeepSeek Coder 6.7B (Free, Local)"
+            case .dolphinMistral: return "Dolphin Mistral 7B (Free, Local)"
+            case .tinyllama: return "TinyLlama 1.1B (Fast, Free)"
             }
         }
 
@@ -49,6 +97,7 @@ class AIService: ObservableObject {
             case .gpt4oMini: return 0.00015
             case .gpt4Turbo: return 0.01
             case .gpt35Turbo: return 0.0005
+            case .deepseekCoder, .dolphinMistral, .tinyllama: return 0.0 // Free!
             }
         }
 
@@ -58,6 +107,7 @@ class AIService: ObservableObject {
             case .gpt4oMini: return 0.0006
             case .gpt4Turbo: return 0.03
             case .gpt35Turbo: return 0.0015
+            case .deepseekCoder, .dolphinMistral, .tinyllama: return 0.0 // Free!
             }
         }
 
@@ -66,6 +116,9 @@ class AIService: ObservableObject {
             case .gpt4o, .gpt4oMini: return 128_000
             case .gpt4Turbo: return 128_000
             case .gpt35Turbo: return 16_385
+            case .deepseekCoder: return 16_384
+            case .dolphinMistral: return 8_192
+            case .tinyllama: return 2_048
             }
         }
     }
@@ -122,6 +175,9 @@ class AIService: ObservableObject {
     }
     
     func hasAPIKey() -> Bool {
+        if selectedProvider == .ollama {
+            return true // Ollama doesn't require API key
+        }
         return (try? !getAPIKey().isEmpty) ?? false
     }
     
@@ -282,24 +338,43 @@ class AIService: ObservableObject {
         // Check local rate limit first
         try checkLocalRateLimit()
 
-        let apiKey = try getAPIKey()
-
-        guard let url = URL(string: Config.apiEndpoint) else {
+        // Use appropriate endpoint based on provider
+        let endpoint = selectedProvider.endpoint
+        guard let url = URL(string: endpoint) else {
             throw AIError.invalidResponse
         }
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.timeoutInterval = Config.requestTimeoutSeconds
-        request.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
-        let body: [String: Any] = [
-            "model": selectedModel.rawValue,
-            "messages": messages,
-            "max_tokens": maxTokens,
-            "temperature": temperature
-        ]
+        // Build request body based on provider
+        var body: [String: Any]
+        
+        switch selectedProvider {
+        case .openai:
+            let apiKey = try getAPIKey()
+            request.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
+            body = [
+                "model": selectedModel.rawValue,
+                "messages": messages,
+                "max_tokens": maxTokens,
+                "temperature": temperature
+            ]
+            
+        case .ollama:
+            // Ollama format is slightly different
+            body = [
+                "model": selectedModel.rawValue,
+                "messages": messages,
+                "stream": false,
+                "options": [
+                    "temperature": temperature,
+                    "num_predict": maxTokens
+                ]
+            ]
+        }
 
         request.httpBody = try JSONSerialization.data(withJSONObject: body)
 
@@ -314,7 +389,6 @@ class AIService: ObservableObject {
             }
 
             if httpResponse.statusCode == 429 {
-                // Extract retry-after header if present
                 let retryAfter = httpResponse.value(forHTTPHeaderField: "Retry-After")
                     .flatMap { Double($0) }
                 handleAPIRateLimit(retryAfter: retryAfter)
@@ -326,19 +400,39 @@ class AIService: ObservableObject {
                 throw AIError.apiError(errorText)
             }
 
-            guard let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
-                  let choices = json["choices"] as? [[String: Any]],
-                  let firstChoice = choices.first,
-                  let message = firstChoice["message"] as? [String: Any],
-                  let content = message["content"] as? String else {
-                throw AIError.invalidResponse
-            }
-
-            // Track usage with separate input/output tokens
-            if let usage = json["usage"] as? [String: Any] {
-                let inputTokens = usage["prompt_tokens"] as? Int ?? 0
-                let outputTokens = usage["completion_tokens"] as? Int ?? 0
-                await updateUsageStats(inputTokens: inputTokens, outputTokens: outputTokens)
+            // Parse response based on provider
+            let content: String
+            
+            switch selectedProvider {
+            case .openai:
+                guard let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+                      let choices = json["choices"] as? [[String: Any]],
+                      let firstChoice = choices.first,
+                      let message = firstChoice["message"] as? [String: Any],
+                      let messageContent = message["content"] as? String else {
+                    throw AIError.invalidResponse
+                }
+                content = messageContent
+                
+                // Track OpenAI usage
+                if let usage = json["usage"] as? [String: Any] {
+                    let inputTokens = usage["prompt_tokens"] as? Int ?? 0
+                    let outputTokens = usage["completion_tokens"] as? Int ?? 0
+                    await updateUsageStats(inputTokens: inputTokens, outputTokens: outputTokens)
+                }
+                
+            case .ollama:
+                guard let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+                      let message = json["message"] as? [String: Any],
+                      let messageContent = message["content"] as? String else {
+                    throw AIError.invalidResponse
+                }
+                content = messageContent
+                
+                // Track Ollama usage (free, but still count for stats)
+                if let evalCount = json["eval_count"] as? Int {
+                    await updateUsageStats(inputTokens: 0, outputTokens: evalCount)
+                }
             }
 
             return content

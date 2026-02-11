@@ -11,6 +11,7 @@
 		099EB5D8B398665AF9189217 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02050C3BB5A084AD99E1B4C4 /* Security.framework */; };
 		0EF973ADE8F8883FB5D6BA30 /* SSHKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46E1BEAA1333114C111A6E9 /* SSHKeyManager.swift */; };
 		167F4C4B5B1FB197BEE28AF0 /* ServerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444EEF2D15501FD711757DD1 /* ServerListViewModel.swift */; };
+		173E326796F58A518600B199 /* CommandAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B601D08B2B5AEDFE1E0EF9 /* CommandAIService.swift */; };
 		18A499D0F3876F7D0AB42C9B /* SSHService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71E18B3C144AFE1CB9AED58 /* SSHService.swift */; };
 		1919D10B4C4F1AA5EB36CEDC /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C35C69EB70DA02FE2411B37 /* PrivacyPolicyView.swift */; };
 		1CEBB26D62289239ED1A9DD7 /* OnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC9B438BEA3D41EA42811C1 /* OnboardingManager.swift */; };
@@ -98,6 +99,7 @@
 		9A991E86255677E1930542A7 /* SessionTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTabView.swift; sourceTree = "<group>"; };
 		9DEDACBE0B113EC3C75A9B11 /* ServerProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerProfile.swift; sourceTree = "<group>"; };
 		9F84E299A677FCD41F1EB4EB /* TerminalSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalSettingsView.swift; sourceTree = "<group>"; };
+		A3B601D08B2B5AEDFE1E0EF9 /* CommandAIService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CommandAIService.swift; path = SSHTerminal/Core/Services/CommandAIService.swift; sourceTree = SOURCE_ROOT; };
 		A46E1BEAA1333114C111A6E9 /* SSHKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSHKeyManager.swift; sourceTree = "<group>"; };
 		A7867CE32A714DB626A2956D /* PortForwardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortForwardingView.swift; sourceTree = "<group>"; };
 		AA67BC7F6D954AF9A1F45EB6 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				A46E1BEAA1333114C111A6E9 /* SSHKeyManager.swift */,
 				F71E18B3C144AFE1CB9AED58 /* SSHService.swift */,
 				94A6E9F36ED7346334B3E20B /* PTYSession.swift */,
+				A3B601D08B2B5AEDFE1E0EF9 /* CommandAIService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -565,6 +568,7 @@
 				DABD342C91CF87735361B4CB /* WelcomeView.swift in Sources */,
 				7BCD0025BE722CEB4002EA51 /* PTYSession.swift in Sources */,
 				5456594884EAD1EF70FA6E59 /* PTYTerminalView.swift in Sources */,
+				173E326796F58A518600B199 /* CommandAIService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
