@@ -1,0 +1,174 @@
+name: Build & Release IPA
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version tag (e.g., v1.0.0)'
+        required: true
+        default: 'v1.0.0'
+
+env:
+  SCHEME: SSHTerminal
+  CONFIGURATION: Release
+
+jobs:
+  build-ipa:
+    name: Build IPA for Sideloading
+    runs-on: macos-14
+    
+    steps:
+    - name: 📥 Checkout Code
+      uses: actions/checkout@v4
+    
+    - name: 🔍 Xcode Version
+      run: xcodebuild -version
+    
+    - name: 📦 Resolve Dependencies
+      run: xcodebuild -resolvePackageDependencies -scheme "${{ env.SCHEME }}"
+    
+    - name: 🏗️ Build Archive
+      run: |
+        xcodebuild archive \
+          -scheme "${{ env.SCHEME }}" \
+          -configuration "${{ env.CONFIGURATION }}" \
+          -archivePath ./build/SSHTerminal.xcarchive \
+          -sdk iphoneos \
+          CODE_SIGNING_ALLOWED=NO \
+          CODE_SIGNING_REQUIRED=NO \
+          CODE_SIGN_IDENTITY="" \
+          DEVELOPMENT_TEAM=""
+    
+    - name: 📱 Export IPA
+      run: |
+        # Create export options plist
+        cat > ./build/ExportOptions.plist << EOF
+        <?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+        <plist version="1.0">
+        <dict>
+            <key>method</key>
+            <string>development</string>
+            <key>signingStyle</key>
+            <string>manual</string>
+            <key>stripSwiftSymbols</key>
+            <true/>
+            <key>uploadSymbols</key>
+            <false/>
+            <key>compileBitcode</key>
+            <false/>
+        </dict>
+        </plist>
+        EOF
+        
+        # Export IPA
+        xcodebuild -exportArchive \
+          -archivePath ./build/SSHTerminal.xcarchive \
+          -exportPath ./build \
+          -exportOptionsPlist ./build/ExportOptions.plist \
+          -allowProvisioningUpdates || echo "Export may require manual signing"
+        
+        # Alternatively, create IPA manually from app bundle
+        if [ ! -f "./build/SSHTerminal.ipa" ]; then
+          echo "Creating unsigned IPA from app bundle..."
+          mkdir -p ./build/Payload
+          cp -r ./build/SSHTerminal.xcarchive/Products/Applications/SSHTerminal.app ./build/Payload/
+          cd ./build
+          zip -r SSHTerminal-unsigned.ipa Payload
+          cd ..
+          mv ./build/SSHTerminal-unsigned.ipa ./build/SSHTerminal.ipa
+        fi
+    
+    - name: 📊 Package Info
+      run: |
+        ls -lh ./build/*.ipa || echo "IPA not found"
+        if [ -f "./build/SSHTerminal.ipa" ]; then
+          SIZE=$(ls -lh ./build/SSHTerminal.ipa | awk '{print $5}')
+          echo "IPA Size: $SIZE"
+        fi
+    
+    - name: 📝 Generate Release Notes
+      run: |
+        cat > ./RELEASE_NOTES.md << 'EOF'
+        # SSHTerminal - iOS SSH Client with AI Assistant
+        
+        ## 🎯 Sideloading Instructions
+        
+        ### Method 1: AltStore (Recommended)
+        1. Install [AltStore](https://altstore.io/) on your Mac/PC
+        2. Install AltServer on your iOS device
+        3. Download `SSHTerminal.ipa` below
+        4. Open with AltStore and install
+        
+        ### Method 2: Sideloadly
+        1. Install [Sideloadly](https://sideloadly.io/)
+        2. Connect iPhone via USB
+        3. Drag `SSHTerminal.ipa` into Sideloadly
+        4. Sign with your Apple ID
+        
+        ### Method 3: Xcode (Developer)
+        1. Download `SSHTerminal.ipa`
+        2. Extract .app bundle
+        3. Use Xcode's Devices & Simulators window
+        4. Drag .app to device
+        
+        ## ✨ Features
+        
+        - 🔐 SSH terminal with proper PTY support
+        - 🤖 AI command assistant (Ollama integration)
+        - 📝 Command history & suggestions
+        - ⌨️ Custom keyboard toolbar
+        - 🎨 Syntax highlighting
+        - 🔒 Secure credential storage
+        
+        ## 🛠️ Setup AI Features
+        
+        1. Set up Ollama server (local or remote)
+        2. Run: `setup_ollama.sh` (included in repo)
+        3. Configure server IP in app settings
+        4. Use magic wand (⭐) button for AI commands
+        
+        ## 📚 Documentation
+        
+        - [GitHub Repository](https://github.com/heyfinal/SSHTerminal)
+        - [Setup Guide](https://github.com/heyfinal/SSHTerminal#setup)
+        - [AI Setup](https://github.com/heyfinal/SSHTerminal/blob/main/docs/AI_SETUP_GUIDE.md)
+        
+        ## ⚠️ Important Notes
+        
+        - **Unsigned IPA**: Requires sideloading tools
+        - **7-day certificate**: Free Apple ID expires in 7 days
+        - **Developer account**: $99/yr for 1-year certificates
+        - **Trust required**: Settings → General → VPN & Device Management
+        
+        ## 🆓 100% Free & Open Source
+        
+        No subscriptions, no ads, no tracking. Forever free.
+        
+        ---
+        
+        **Star ⭐ the repo if you find this useful!**
+        EOF
+    
+    - name: 🚀 Create GitHub Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: ./build/SSHTerminal.ipa
+        body_path: ./RELEASE_NOTES.md
+        tag_name: ${{ github.event.inputs.version || github.ref_name }}
+        name: SSHTerminal ${{ github.event.inputs.version || github.ref_name }}
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: ✅ Release Complete
+      run: |
+        echo "### 🎉 Release Published!" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Download:** [SSHTerminal.ipa](https://github.com/${{ github.repository }}/releases/latest)" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Sideload with:** AltStore, Sideloadly, or Xcode" >> $GITHUB_STEP_SUMMARY
