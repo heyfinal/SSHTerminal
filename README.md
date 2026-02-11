@@ -5,6 +5,13 @@ Modern iOS SSH terminal with **native PTY integration** and **AI-powered command
 [![iOS](https://img.shields.io/badge/iOS-15.0+-blue.svg)](https://www.apple.com/ios/)
 [![Swift](https://img.shields.io/badge/Swift-5.9-orange.svg)](https://swift.org)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Build](https://github.com/heyfinal/SSHTerminal/actions/workflows/ios-build-test.yml/badge.svg)](https://github.com/heyfinal/SSHTerminal/actions)
+[![GitHub Stars](https://img.shields.io/github/stars/heyfinal/SSHTerminal?style=social)](https://github.com/heyfinal/SSHTerminal/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/heyfinal/SSHTerminal?style=social)](https://github.com/heyfinal/SSHTerminal/network/members)
+
+> 🎯 **The ONLY free iOS SSH terminal with local AI command assistance**  
+> 💰 **$0 forever** vs. Termius ($100/yr), Blink ($20/yr), Prompt ($15)  
+> 🤖 **NO API keys needed** - runs 100% locally with Ollama
 
 Transform natural language into bash commands using local AI - **100% free!**
 
