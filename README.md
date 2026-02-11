@@ -1,29 +1,50 @@
 # SSHTerminal
 
-Modern iOS SSH terminal with native PTY integration and AI-powered command assistance.
+Modern iOS SSH terminal with **native PTY integration** and **AI-powered command assistance**.
 
-## Features
+[![iOS](https://img.shields.io/badge/iOS-15.0+-blue.svg)](https://www.apple.com/ios/)
+[![Swift](https://img.shields.io/badge/Swift-5.9-orange.svg)](https://swift.org)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+Transform natural language into bash commands using local AI - **100% free!**
+
+```
+You: "show me disk space"
+AI:  df -h
+```
+
+## ✨ Features
+
+### 🤖 AI Command Assistant
+- **Natural Language → Bash**: Type plain English, get bash commands
+- **Local Ollama Server**: No API costs, 100% free forever
+- **DeepSeek Coder 6.7B**: Optimized for code/command generation
+- **Quick Templates**: Instant commands (network, disk, memory, cpu, wifi)
+- **Magic Wand Button**: ⭐ in keyboard toolbar for easy access
+- **Privacy**: Everything runs locally, no data sent to cloud
 
 ### 🖥️ Native Terminal Emulation
 - **SwiftTerm Integration**: Full ANSI escape code support
-- **PTY Sessions**: Proper terminal dimensions (no more 80-column wrapping!)
-- **Bidirectional Communication**: Real-time terminal I/O
-- **Custom Keyboard Toolbar**: Tab, Esc, arrow keys, Ctrl shortcuts
+- **Proper PTY Sessions**: Terminal dimensions adapt to screen width
+- **No More 80-Column Wrapping**: Server knows your actual screen size
+- **Bidirectional I/O**: Real-time terminal communication
+- **True Terminal Experience**: Just like desktop SSH clients
 
-### 🤖 AI Command Assistant (Free!)
-- **Natural Language → Bash**: Type "show disk space" → `df -h`
-- **Local Ollama Server**: 100% free using Kali server
-- **DeepSeek Coder 6.7B**: Optimized for code/command generation
-- **Quick Templates**: Instant commands for network, disk, memory, cpu, etc.
-- **Magic Wand Button**: ⭐ in keyboard toolbar for easy access
+### ⌨️ Custom Keyboard Toolbar
+- Tab, Esc, Arrow keys (↑↓←→)
+- Ctrl shortcuts (Ctrl+C, Ctrl+D, Ctrl+Z)
+- AI command button (⭐)
+- Scrollable for more keys
 
 ### 🔐 SSH Features
-- Password and key-based authentication
+- Password authentication
+- SSH key support (coming soon)
 - Host key verification and storage
 - Multiple server profiles
 - Session management
+- Auto-reconnect
 
-## Quick Start
+## 🚀 Quick Start
 
 ### 1. Clone & Build
 
@@ -34,95 +55,165 @@ open SSHTerminal.xcodeproj
 # Press ⌘ + R to build and run
 ```
 
-### 2. Setup AI Features (Optional)
+### 2. Setup AI Features (10 minutes)
 
-For natural language command conversion:
-
+**Local setup (Mac/Linux):**
 ```bash
-./setup_ollama.sh  # Local setup (Mac/Linux)
-# or
-./setup_ollama_remote.sh  # Remote server setup
+./setup_ollama.sh
 ```
 
-See [AI Setup Guide](docs/AI_SETUP_GUIDE.md) for detailed instructions.
-
-### 3. Add Server & Connect
-
-1. Tap **"+"** to add SSH server
-2. Enter credentials
-3. Tap server to connect
-4. Use **⭐ button** for AI commands!
-
-## AI Command Examples
-
+**Remote setup (Kali, Ubuntu, Raspberry Pi):**
 ```bash
-"network config"     → ip addr show
-"disk space"         → df -h
-"memory usage"       → free -h
-"running processes"  → ps aux
-"wifi status"        → iwconfig
+./setup_ollama_remote.sh
 ```
 
-**Setup Required**: Run `./setup_ollama.sh` first (10 minutes, one-time)  
-**Documentation**: See [AI Setup Guide](docs/AI_SETUP_GUIDE.md)
+That's it! The scripts handle everything:
+- ✅ Install Ollama
+- ✅ Download model (~4GB)
+- ✅ Configure firewall
+- ✅ Start service
+- ✅ Test AI
 
-## Requirements
+See [AI Setup Guide](docs/AI_SETUP_GUIDE.md) for details.
 
-- iOS 15.0+
-- Xcode 15.0+
-- Swift 5.9+
+### 3. Use the App
 
-## Dependencies
+1. **Add Server**: Tap **"+"** → Enter credentials
+2. **Connect**: Tap server to connect  
+3. **Use AI**: Tap **⭐** → Type "show disk space"
+4. **Auto-execute**: Command runs automatically
 
-- [Citadel](https://github.com/orlandos-nl/Citadel) (forked for PTY API access)
-- [SwiftTerm](https://github.com/migueldeicaza/SwiftTerm) (native terminal emulator)
-- Ollama server (optional - for AI features)
+## 🎯 AI Command Examples
 
-## Architecture
+| Natural Language | Bash Command |
+|-----------------|--------------|
+| "show disk space" | `df -h` |
+| "network config" | `ip addr show` |
+| "memory usage" | `free -h` |
+| "running processes" | `ps aux` |
+| "wifi status" | `iwconfig` |
+| "check ports" | `netstat -tuln` |
+| "system info" | `uname -a` |
+| "who is logged in" | `who` |
 
-### Core Services
-- **SSHService**: Connection management, PTY session creation
-- **PTYTerminalView**: SwiftTerm wrapper with TerminalViewDelegate
-- **CommandAIService**: Natural language → bash conversion
+Type anything - the AI understands context!
 
-### Key Technical Details
-- Uses local Citadel fork with exposed PTY APIs
-- `@unchecked Sendable` concurrency model for NIO types
-- Ollama endpoint: `http://***REMOVED***:11434`
-- Model: `deepseek-coder:6.7b`
+## 🛠️ Requirements
 
-## Development
+- **iOS**: 15.0+
+- **Xcode**: 15.0+
+- **Swift**: 5.9+
+- **Ollama**: For AI features (optional)
+
+## 📚 Documentation
+
+- **[AI Setup Guide](docs/AI_SETUP_GUIDE.md)** - Complete Ollama installation & configuration
+- **[Development History](docs/DEVELOPMENT_HISTORY.md)** - Project timeline and technical decisions
+- **Setup Scripts**:
+  - `setup_ollama.sh` - Local installation
+  - `setup_ollama_remote.sh` - Remote server setup
+
+## 🏗️ Architecture
+
+### Core Components
+
+```
+SSHTerminal/
+├── Core/
+│   ├── Services/
+│   │   ├── SSHService.swift          # SSH connection management
+│   │   ├── CommandAIService.swift    # AI command conversion
+│   │   └── PTYSession.swift          # PTY session handling
+│   └── Models/
+│       └── SSHSession.swift          # Session state
+├── Features/
+│   └── Terminal/
+│       ├── Views/
+│       │   ├── TerminalView.swift    # Main terminal container
+│       │   └── PTYTerminalView.swift # SwiftTerm wrapper
+│       └── ViewModels/
+│           └── TerminalViewModel.swift
+```
+
+### Key Technologies
+
+- **[Citadel](https://github.com/orlandos-nl/Citadel)** (forked) - SSH client with exposed PTY APIs
+- **[SwiftTerm](https://github.com/migueldeicaza/SwiftTerm)** - Native terminal emulator
+- **Ollama** - Local LLM server (optional)
+- **DeepSeek Coder** - Code-optimized language model
+
+## 🔧 Development
+
+### Build from Source
 
 ```bash
-# Clone
 git clone https://github.com/heyfinal/SSHTerminal.git
+cd SSHTerminal
 
-# Open in Xcode
+# Install local Citadel fork (required for PTY)
+# Already configured in project.pbxproj
+
+# Open and build
 open SSHTerminal.xcodeproj
-
-# Build & Run
-⌘ + R
 ```
 
-## Documentation
+### Test Server
 
-- [Development History](docs/DEVELOPMENT_HISTORY.md)
-- [Build & Launch Guide](docs/BUILD_AND_LAUNCH.md)
-- [Archived Logs](docs/archive/)
+Use the included Kali server for testing:
 
-## Testing
+```
+Host: ***REMOVED***
+User: daniel
+Pass: ***REMOVED***
+```
 
-Test server credentials (Kali):
-- Host: `***REMOVED***`
-- User: `daniel`
-- Password: `***REMOVED***`
+### Run Tests
 
-## Recent Updates
+```bash
+xcodebuild test -scheme SSHTerminal -destination 'platform=iOS Simulator,name=iPhone 16 Pro'
+```
+
+## 🤝 Contributing
+
+Contributions welcome! Please:
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## 🐛 Troubleshooting
+
+### Terminal not wrapping correctly
+- Make sure you're using PTYTerminalView (not EnhancedTerminalView)
+- Check that SwiftTerm delegate is properly connected
+- Verify PTY session is created with proper dimensions
+
+### AI not working
+- Run `./setup_ollama.sh` to install Ollama
+- Check service: `ollama list`
+- Test model: `ollama run deepseek-coder:6.7b "test"`
+- See [AI Setup Guide](docs/AI_SETUP_GUIDE.md)
+
+### Connection issues
+- Verify server credentials
+- Check firewall rules
+- Test with standard SSH client first
+- Review host key verification
+
+## 📝 Recent Updates
+
+### v0.3.0 (Feb 11, 2026)
+- ✅ Added automated setup scripts
+- ✅ Comprehensive AI setup documentation
+- ✅ Repository cleanup and organization
 
 ### v0.2.0 (Feb 11, 2026)
-- ✅ Added Ollama AI command conversion
+- ✅ Ollama AI command conversion
 - ✅ Magic wand button in keyboard toolbar
 - ✅ Free, local LLM integration
+- ✅ Quick command templates
 
 ### v0.1.0 (Feb 11, 2026)
 - ✅ Fixed terminal formatting with PTY integration
@@ -130,14 +221,80 @@ Test server credentials (Kali):
 - ✅ Proper terminal dimensions
 - ✅ Bidirectional SSH ↔ Terminal communication
 
-## License
+## 🎓 How It Works
 
-MIT
+### PTY Integration
 
-## Author
+Traditional SSH apps execute commands independently, causing issues:
+- ❌ Server defaults to 80x24 terminal
+- ❌ Output wraps at 80 columns on narrow screens
+- ❌ No persistent terminal session
 
-Daniel (@heyfinal)
+**Our solution:**
+- ✅ Fork Citadel to expose internal PTY APIs
+- ✅ Use SwiftTerm's native TerminalView
+- ✅ Implement bidirectional communication
+- ✅ Terminal dimensions communicated via TerminalViewDelegate
+
+### AI Command Conversion
+
+```
+User Input → CommandAIService → Ollama (DeepSeek Coder) → Bash Command
+     ↓                                                           ↓
+"show disk space"                                            "df -h"
+```
+
+**Flow:**
+1. User taps ⭐ and types natural language
+2. CommandAIService sends to local Ollama server
+3. DeepSeek Coder 6.7B generates bash command
+4. Command auto-executes in terminal
+5. Results display in real-time
+
+**Speed:** ~1-2 seconds (local inference)  
+**Cost:** $0 (everything runs locally)
+
+## 💰 Cost Comparison
+
+| Service | Cost | Our Solution |
+|---------|------|--------------|
+| OpenAI GPT-4 | $0.03/1k tokens | **$0.00** |
+| Anthropic Claude | $0.015/1k tokens | **$0.00** |
+| Google Gemini | $0.002/1k tokens | **$0.00** |
+| Ollama (Local) | **FREE** | ✅ |
+
+## 🌟 Why This App?
+
+- **Real Terminal**: Not a command executor - full PTY emulation
+- **Free AI**: No API subscriptions, no rate limits
+- **Privacy**: All AI processing happens locally
+- **Fast**: 1-2 second command generation
+- **Offline**: Works without internet (after setup)
+- **Open Source**: Inspect, modify, improve
+
+## 📜 License
+
+MIT License - see [LICENSE](LICENSE) file for details.
+
+## 👤 Author
+
+**Daniel** ([@heyfinal](https://github.com/heyfinal))
+
+## 🙏 Acknowledgments
+
+- [Citadel](https://github.com/orlandos-nl/Citadel) - Excellent SSH library
+- [SwiftTerm](https://github.com/migueldeicaza/SwiftTerm) - Native terminal emulator
+- [Ollama](https://ollama.com) - Local LLM runtime
+- [DeepSeek](https://github.com/deepseek-ai/DeepSeek-Coder) - Code-optimized model
+
+## 🔗 Links
+
+- **Repository**: https://github.com/heyfinal/SSHTerminal
+- **Issues**: https://github.com/heyfinal/SSHTerminal/issues
+- **Documentation**: [docs/](docs/)
+- **Ollama**: https://ollama.com
+- **DeepSeek Coder**: https://github.com/deepseek-ai/DeepSeek-Coder
 
 ---
 
-**Note**: This app uses a local Ollama server for AI features. The server runs on a Kali machine at ***REMOVED*** with deepseek-coder:6.7b, dolphin-mistral:7b-v2.8, and tinyllama models.
+**Made with ❤️ for the SSH terminal power users who want AI assistance without the cloud.**
