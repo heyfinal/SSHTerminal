@@ -1,0 +1,30 @@
+{
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/SwiftTerm/Sources/SwiftTerm/TerminalOptions.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/TerminalOptions.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/TerminalOptions.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/TerminalOptions.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/TerminalOptions.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/TerminalOptions.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/SwiftTerm/Sources/SwiftTerm/UnicodeWidthData.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/UnicodeWidthData.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/UnicodeWidthData.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/UnicodeWidthData.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/UnicodeWidthData.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/UnicodeWidthData.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/SwiftTerm/Sources/SwiftTerm/Utilities.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/Utilities.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/Utilities.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/Utilities.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/Utilities.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/Utilities.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/SwiftTerm/Sources/SwiftTerm/iOS/SwiftUITerminalView.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/SwiftUITerminalView.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/SwiftUITerminalView.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/SwiftUITerminalView.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/SwiftUITerminalView.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/SwiftUITerminalView.swiftdeps"
+  }
+}

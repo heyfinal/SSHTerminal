@@ -1,0 +1,30 @@
+{
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/Citadel/Sources/Citadel/NIOGlueHandler.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/NIOGlueHandler.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/NIOGlueHandler.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/NIOGlueHandler.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/NIOGlueHandler.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/NIOGlueHandler.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/Citadel/Sources/Citadel/OpenSSHKey.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/OpenSSHKey.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/OpenSSHKey.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/OpenSSHKey.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/OpenSSHKey.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/OpenSSHKey.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/Citadel/Sources/Citadel/RemotePortForward/Client/RemotePortForward+Client.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/RemotePortForward+Client.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/RemotePortForward+Client.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/RemotePortForward+Client.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/RemotePortForward+Client.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/RemotePortForward+Client.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/Citadel/Sources/Citadel/RemotePortForward/Server/RemotePortForward+Server.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/RemotePortForward+Server.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/RemotePortForward+Server.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/RemotePortForward+Server.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/RemotePortForward+Server.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/RemotePortForward+Server.swiftdeps"
+  }
+}

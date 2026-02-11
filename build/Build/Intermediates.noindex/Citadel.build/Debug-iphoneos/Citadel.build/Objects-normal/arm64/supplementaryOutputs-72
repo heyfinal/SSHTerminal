@@ -1,0 +1,23 @@
+{
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/Citadel/Sources/Citadel/Server.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/Server.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/Server.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/Server.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/Server.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/Server.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/Citadel/Sources/Citadel/Shell/Server/ShellDelegate.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/ShellDelegate.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/ShellDelegate.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/ShellDelegate.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/ShellDelegate.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/ShellDelegate.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/Citadel/Sources/Citadel/TTY/Client/TTY.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/TTY.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/TTY.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/TTY.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/TTY.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/TTY.swiftdeps"
+  }
+}

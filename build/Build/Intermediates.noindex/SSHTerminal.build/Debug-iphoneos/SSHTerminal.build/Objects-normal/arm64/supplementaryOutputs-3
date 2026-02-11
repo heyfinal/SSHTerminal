@@ -1,0 +1,30 @@
+{
+  "/Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Core/Services/KeychainService.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/KeychainService.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/KeychainService.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/KeychainService.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/KeychainService.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/KeychainService.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/AI/Views/ErrorExplanationView.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/ErrorExplanationView.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/ErrorExplanationView.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/ErrorExplanationView.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/ErrorExplanationView.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/ErrorExplanationView.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Launch/LaunchScreenView.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/LaunchScreenView.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/LaunchScreenView.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/LaunchScreenView.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/LaunchScreenView.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/LaunchScreenView.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Utilities/HapticManager.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/HapticManager.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/HapticManager.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/HapticManager.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/HapticManager.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/HapticManager.swiftdeps"
+  }
+}

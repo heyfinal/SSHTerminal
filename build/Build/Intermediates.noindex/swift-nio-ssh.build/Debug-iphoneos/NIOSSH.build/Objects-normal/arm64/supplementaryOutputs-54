@@ -1,0 +1,51 @@
+{
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio-ssh/Sources/NIOSSH/Child Channels/OutboundFlowController.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/OutboundFlowController.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/OutboundFlowController.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/OutboundFlowController.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/OutboundFlowController.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/OutboundFlowController.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio-ssh/Sources/NIOSSH/Child Channels/SSHChannelData.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/SSHChannelData.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/SSHChannelData.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/SSHChannelData.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/SSHChannelData.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/SSHChannelData.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio-ssh/Sources/NIOSSH/Child Channels/SSHChannelIdentifier.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/SSHChannelIdentifier.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/SSHChannelIdentifier.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/SSHChannelIdentifier.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/SSHChannelIdentifier.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/SSHChannelIdentifier.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio-ssh/Sources/NIOSSH/Child Channels/SSHChannelMultiplexer.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/SSHChannelMultiplexer.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/SSHChannelMultiplexer.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/SSHChannelMultiplexer.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/SSHChannelMultiplexer.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/SSHChannelMultiplexer.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio-ssh/Sources/NIOSSH/Child Channels/SSHChannelType.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/SSHChannelType.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/SSHChannelType.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/SSHChannelType.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/SSHChannelType.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/SSHChannelType.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio-ssh/Sources/NIOSSH/Child Channels/SSHChildChannel.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/SSHChildChannel.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/SSHChildChannel.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/SSHChildChannel.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/SSHChildChannel.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/SSHChildChannel.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio-ssh/Sources/NIOSSH/Connection State Machine/Operations/AcceptsChannelMessages.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/AcceptsChannelMessages.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/AcceptsChannelMessages.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/AcceptsChannelMessages.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/AcceptsChannelMessages.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/AcceptsChannelMessages.swiftdeps"
+  }
+}

@@ -1,0 +1,451 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project SSHTerminal.xcodeproj -scheme SSHTerminal -destination "platform=iOS Simulator,name=iPhone 16,OS=18.6" build
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  swift-system: https://github.com/apple/swift-system.git @ 1.6.4
+  Citadel: https://github.com/orlandos-nl/Citadel.git @ 0.12.0
+  swift-argument-parser: https://github.com/apple/swift-argument-parser @ 1.7.0
+  swift-crypto: https://github.com/apple/swift-crypto.git @ 3.15.1
+  SwiftTerm: https://github.com/migueldeicaza/SwiftTerm.git @ 1.10.1
+  swift-asn1: https://github.com/apple/swift-asn1.git @ 1.5.1
+  swift-nio: https://github.com/apple/swift-nio.git @ 2.94.0
+  BigInt: https://github.com/attaswift/BigInt.git @ 5.7.0
+  swift-log: https://github.com/apple/swift-log.git @ 1.9.1
+  swift-nio-ssh: https://github.com/Joannis/swift-nio-ssh.git @ 0.3.5
+  swift-collections: https://github.com/apple/swift-collections.git @ 1.3.0
+  swift-atomics: https://github.com/apple/swift-atomics.git @ 1.3.0
+
+2026-02-10 20:53:10.556 xcodebuild[19894:279372] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:iOS Simulator, arch:arm64, id:472C2411-9F9C-4EE3-9537-BBAD85F87C7D, OS:18.6, name:iPhone 16 }
+{ platform:iOS Simulator, arch:x86_64, id:472C2411-9F9C-4EE3-9537-BBAD85F87C7D, OS:18.6, name:iPhone 16 }
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (51 targets)
+    Target 'SSHTerminal' in project 'SSHTerminal'
+        ➜ Explicit dependency on target 'Citadel' in project 'Citadel'
+        ➜ Explicit dependency on target 'SwiftTerm' in project 'SwiftTerm'
+    Target 'SwiftTerm' in project 'SwiftTerm'
+        ➜ Explicit dependency on target 'SwiftTerm' in project 'SwiftTerm'
+    Target 'SwiftTerm' in project 'SwiftTerm' (no dependencies)
+    Target 'Citadel' in project 'Citadel'
+        ➜ Explicit dependency on target 'Citadel' in project 'Citadel'
+        ➜ Explicit dependency on target 'CCitadelBcrypt' in project 'Citadel'
+        ➜ Explicit dependency on target 'NIOSSH' in project 'swift-nio-ssh'
+        ➜ Explicit dependency on target 'Crypto' in project 'swift-crypto'
+        ➜ Explicit dependency on target '_CryptoExtras' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'BigInt' in project 'BigInt'
+        ➜ Explicit dependency on target 'Logging' in project 'swift-log'
+    Target 'Citadel' in project 'Citadel'
+        ➜ Explicit dependency on target 'CCitadelBcrypt' in project 'Citadel'
+        ➜ Explicit dependency on target 'NIOSSH' in project 'swift-nio-ssh'
+        ➜ Explicit dependency on target 'Crypto' in project 'swift-crypto'
+        ➜ Explicit dependency on target '_CryptoExtras' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'BigInt' in project 'BigInt'
+        ➜ Explicit dependency on target 'Logging' in project 'swift-log'
+    Target 'Logging' in project 'swift-log'
+        ➜ Explicit dependency on target 'Logging' in project 'swift-log'
+    Target 'Logging' in project 'swift-log' (no dependencies)
+    Target 'BigInt' in project 'BigInt'
+        ➜ Explicit dependency on target 'BigInt' in project 'BigInt'
+    Target 'BigInt' in project 'BigInt' (no dependencies)
+    Target '_CryptoExtras' in project 'swift-crypto'
+        ➜ Explicit dependency on target '_CryptoExtras' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'swift-crypto__CryptoExtras' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'CCryptoBoringSSL' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'CCryptoBoringSSLShims' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'CryptoBoringWrapper' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'Crypto' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'SwiftASN1' in project 'swift-asn1'
+    Target '_CryptoExtras' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'swift-crypto__CryptoExtras' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'CCryptoBoringSSL' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'CCryptoBoringSSLShims' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'CryptoBoringWrapper' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'Crypto' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'SwiftASN1' in project 'swift-asn1'
+    Target 'SwiftASN1' in project 'swift-asn1'
+        ➜ Explicit dependency on target 'SwiftASN1' in project 'swift-asn1'
+    Target 'SwiftASN1' in project 'swift-asn1' (no dependencies)
+    Target 'CryptoBoringWrapper' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'swift-crypto_CryptoBoringWrapper' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'CCryptoBoringSSL' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'CCryptoBoringSSLShims' in project 'swift-crypto'
+    Target 'swift-crypto_CryptoBoringWrapper' in project 'swift-crypto' (no dependencies)
+    Target 'CCryptoBoringSSLShims' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'swift-crypto_CCryptoBoringSSLShims' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'CCryptoBoringSSL' in project 'swift-crypto'
+    Target 'swift-crypto_CCryptoBoringSSLShims' in project 'swift-crypto' (no dependencies)
+    Target 'CCryptoBoringSSL' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'swift-crypto_CCryptoBoringSSL' in project 'swift-crypto'
+    Target 'swift-crypto_CCryptoBoringSSL' in project 'swift-crypto' (no dependencies)
+    Target 'swift-crypto__CryptoExtras' in project 'swift-crypto' (no dependencies)
+    Target 'NIOSSH' in project 'swift-nio-ssh'
+        ➜ Explicit dependency on target 'NIOSSH' in project 'swift-nio-ssh'
+        ➜ Explicit dependency on target 'NIOCore' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOConcurrencyHelpers' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOFoundationCompat' in project 'swift-nio'
+        ➜ Explicit dependency on target 'Crypto' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'Atomics' in project 'swift-atomics'
+    Target 'NIOSSH' in project 'swift-nio-ssh'
+        ➜ Explicit dependency on target 'NIOCore' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOConcurrencyHelpers' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOFoundationCompat' in project 'swift-nio'
+        ➜ Explicit dependency on target 'Crypto' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'Atomics' in project 'swift-atomics'
+    Target 'Crypto' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'Crypto' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'swift-crypto_Crypto' in project 'swift-crypto'
+    Target 'Crypto' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'swift-crypto_Crypto' in project 'swift-crypto'
+    Target 'swift-crypto_Crypto' in project 'swift-crypto' (no dependencies)
+    Target 'NIOFoundationCompat' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOFoundationCompat' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOAtomics' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOConcurrencyHelpers' in project 'swift-nio'
+        ➜ Explicit dependency on target '_NIOBase64' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOOpenBSD' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIODarwin' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOLinux' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOWindows' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOWASI' in project 'swift-nio'
+        ➜ Explicit dependency on target '_NIODataStructures' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOCore' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOEmbedded' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOPosix' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOPosix' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIO' in project 'swift-nio'
+        ➜ Explicit dependency on target 'DequeModule' in project 'swift-collections'
+        ➜ Explicit dependency on target 'Atomics' in project 'swift-atomics'
+    Target 'NIOFoundationCompat' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOAtomics' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOConcurrencyHelpers' in project 'swift-nio'
+        ➜ Explicit dependency on target '_NIOBase64' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOOpenBSD' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIODarwin' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOLinux' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOWindows' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOWASI' in project 'swift-nio'
+        ➜ Explicit dependency on target '_NIODataStructures' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOCore' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOEmbedded' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOPosix' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOPosix' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIO' in project 'swift-nio'
+        ➜ Explicit dependency on target 'DequeModule' in project 'swift-collections'
+        ➜ Explicit dependency on target 'Atomics' in project 'swift-atomics'
+    Target 'NIO' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOAtomics' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOConcurrencyHelpers' in project 'swift-nio'
+        ➜ Explicit dependency on target '_NIOBase64' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOOpenBSD' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIODarwin' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOLinux' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOWindows' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOWASI' in project 'swift-nio'
+        ➜ Explicit dependency on target '_NIODataStructures' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOCore' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOEmbedded' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOPosix' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOPosix' in project 'swift-nio'
+        ➜ Explicit dependency on target 'DequeModule' in project 'swift-collections'
+        ➜ Explicit dependency on target 'Atomics' in project 'swift-atomics'
+    Target 'NIOPosix' in project 'swift-nio'
+        ➜ Explicit dependency on target 'swift-nio_NIOPosix' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOOpenBSD' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOLinux' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIODarwin' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOWindows' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOAtomics' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOConcurrencyHelpers' in project 'swift-nio'
+        ➜ Explicit dependency on target '_NIOBase64' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOWASI' in project 'swift-nio'
+        ➜ Explicit dependency on target '_NIODataStructures' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOCore' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOPosix' in project 'swift-nio'
+        ➜ Explicit dependency on target 'DequeModule' in project 'swift-collections'
+        ➜ Explicit dependency on target 'Atomics' in project 'swift-atomics'
+    Target 'swift-nio_NIOPosix' in project 'swift-nio' (no dependencies)
+    Target 'CNIOPosix' in project 'swift-nio' (no dependencies)
+    Target 'NIOEmbedded' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOAtomics' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOConcurrencyHelpers' in project 'swift-nio'
+        ➜ Explicit dependency on target '_NIOBase64' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOOpenBSD' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIODarwin' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOLinux' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOWindows' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOWASI' in project 'swift-nio'
+        ➜ Explicit dependency on target '_NIODataStructures' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOCore' in project 'swift-nio'
+        ➜ Explicit dependency on target 'DequeModule' in project 'swift-collections'
+        ➜ Explicit dependency on target 'Atomics' in project 'swift-atomics'
+    Target 'NIOConcurrencyHelpers' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOConcurrencyHelpers' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOAtomics' in project 'swift-nio'
+    Target 'NIOCore' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOCore' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOAtomics' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOConcurrencyHelpers' in project 'swift-nio'
+        ➜ Explicit dependency on target '_NIOBase64' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOOpenBSD' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIODarwin' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOLinux' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOWindows' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOWASI' in project 'swift-nio'
+        ➜ Explicit dependency on target '_NIODataStructures' in project 'swift-nio'
+        ➜ Explicit dependency on target 'DequeModule' in project 'swift-collections'
+        ➜ Explicit dependency on target 'Atomics' in project 'swift-atomics'
+    Target 'NIOCore' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOAtomics' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOConcurrencyHelpers' in project 'swift-nio'
+        ➜ Explicit dependency on target '_NIOBase64' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOOpenBSD' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIODarwin' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOLinux' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOWindows' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOWASI' in project 'swift-nio'
+        ➜ Explicit dependency on target '_NIODataStructures' in project 'swift-nio'
+        ➜ Explicit dependency on target 'DequeModule' in project 'swift-collections'
+        ➜ Explicit dependency on target 'Atomics' in project 'swift-atomics'
+    Target 'Atomics' in project 'swift-atomics'
+        ➜ Explicit dependency on target 'Atomics' in project 'swift-atomics'
+        ➜ Explicit dependency on target '_AtomicsShims' in project 'swift-atomics'
+    Target 'Atomics' in project 'swift-atomics'
+        ➜ Explicit dependency on target '_AtomicsShims' in project 'swift-atomics'
+    Target '_AtomicsShims' in project 'swift-atomics' (no dependencies)
+    Target 'DequeModule' in project 'swift-collections'
+        ➜ Explicit dependency on target 'DequeModule' in project 'swift-collections'
+        ➜ Explicit dependency on target 'InternalCollectionsUtilities' in project 'swift-collections'
+    Target 'DequeModule' in project 'swift-collections'
+        ➜ Explicit dependency on target 'InternalCollectionsUtilities' in project 'swift-collections'
+    Target 'InternalCollectionsUtilities' in project 'swift-collections' (no dependencies)
+    Target '_NIODataStructures' in project 'swift-nio' (no dependencies)
+    Target 'CNIOWASI' in project 'swift-nio' (no dependencies)
+    Target 'CNIOWindows' in project 'swift-nio' (no dependencies)
+    Target 'CNIOLinux' in project 'swift-nio' (no dependencies)
+    Target 'CNIODarwin' in project 'swift-nio' (no dependencies)
+    Target 'CNIOOpenBSD' in project 'swift-nio' (no dependencies)
+    Target '_NIOBase64' in project 'swift-nio' (no dependencies)
+    Target 'NIOConcurrencyHelpers' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOAtomics' in project 'swift-nio'
+    Target 'CNIOAtomics' in project 'swift-nio' (no dependencies)
+    Target 'CCitadelBcrypt' in project 'Citadel' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk /Users/daniel/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.2-23C53-7d00a8b37fbd7999ea79df8ebc024bf0.sdkstatcache
+    cd /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -o /Users/daniel/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.2-23C53-7d00a8b37fbd7999ea79df8ebc024bf0.sdkstatcache
+
+SwiftDriver SSHTerminal normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name SSHTerminal -Onone -enforce-exclusivity\=checked @/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/Objects-normal/arm64/SSHTerminal.SwiftFileList -DDEBUG -Xcc -fmodule-map-file\=/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/CNIOPosix.modulemap -Xcc -fmodule-map-file\=/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/CNIOWASI.modulemap -Xcc -fmodule-map-file\=/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/CNIOLinux.modulemap -Xcc -fmodule-map-file\=/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/CNIODarwin.modulemap -Xcc -fmodule-map-file\=/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/CNIOOpenBSD.modulemap -Xcc -fmodule-map-file\=/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/CNIOAtomics.modulemap -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/daniel/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/daniel/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.2-23C53-7d00a8b37fbd7999ea79df8ebc024bf0.sdkstatcache -output-file-map /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/Objects-normal/arm64/SSHTerminal-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/daniel/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/daniel/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/Objects-normal/arm64/SSHTerminal.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/daniel/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/Objects-normal/arm64/SSHTerminal_const_extract_protocols.json -Xcc -iquote -Xcc /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/SSHTerminal-generated-files.hmap -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/SSHTerminal-own-target-headers.hmap -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/SSHTerminal-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal-4fd661df79a9f6d2539e1897bbbc7795-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/SSHTerminal-project-headers.hmap -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-nio/Sources/CNIOPosix/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-nio/Sources/CNIOWASI/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-nio/Sources/CNIOWindows/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-nio/Sources/CNIOLinux/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-nio/Sources/CNIODarwin/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-nio/Sources/CNIOOpenBSD/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-nio/Sources/CNIOAtomics/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-atomics/Sources/_AtomicsShims/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-crypto/Sources/CCryptoBoringSSLShims/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-crypto/Sources/CCryptoBoringSSL/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/Citadel/Sources/CCitadelBcrypt/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/DerivedSources-normal/arm64 -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/DerivedSources/arm64 -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/Objects-normal/arm64/SSHTerminal-Swift.h -working-directory /Users/daniel/Development/Projects/SSHTerminal -experimental-emit-module-separately -disable-cmo
+
+SwiftDriver NIOPosix normal arm64 com.apple.xcode.tools.swift.compiler (in target 'NIOPosix' from project 'swift-nio')
+    cd /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal.xcodeproj
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name NIOPosix -Onone -enforce-exclusivity\=checked @/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/swift-nio.build/Debug-iphonesimulator/NIOPosix.build/Objects-normal/arm64/NIOPosix.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE -Xcc -fmodule-map-file\=/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/CNIOPosix.modulemap -Xcc -fmodule-map-file\=/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/CNIOWASI.modulemap -Xcc -fmodule-map-file\=/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/CNIOAtomics.modulemap -Xcc -fmodule-map-file\=/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/CNIODarwin.modulemap -Xcc -fmodule-map-file\=/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/CNIOLinux.modulemap -Xcc -fmodule-map-file\=/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/CNIOOpenBSD.modulemap -DXcode -enable-experimental-feature Lifetimes -enable-upcoming-feature MemberImportVisibility -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target arm64-apple-ios12.0-simulator -g -module-cache-path /Users/daniel/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -suppress-warnings -index-store-path /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/daniel/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.2-23C53-7d00a8b37fbd7999ea79df8ebc024bf0.sdkstatcache -output-file-map /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/swift-nio.build/Debug-iphonesimulator/NIOPosix.build/Objects-normal/arm64/NIOPosix-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/daniel/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/daniel/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/swift-nio.build/Debug-iphonesimulator/NIOPosix.build/Objects-normal/arm64/NIOPosix.swiftmodule -user-module-version 2.94.0 -validate-clang-modules-once -clang-build-session-file /Users/daniel/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -package-name swift_nio -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/swift-nio.build/Debug-iphonesimulator/NIOPosix.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/swift-nio.build/Debug-iphonesimulator/NIOPosix.build/Objects-normal/arm64/NIOPosix_const_extract_protocols.json -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-atomics/Sources/_AtomicsShims/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-nio/Sources/CNIOPosix/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-nio/Sources/CNIOWASI/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-nio/Sources/CNIOAtomics/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-nio/Sources/CNIOWindows/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-nio/Sources/CNIODarwin/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-nio/Sources/CNIOLinux/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-nio/Sources/CNIOOpenBSD/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/swift-nio.build/Debug-iphonesimulator/NIOPosix.build/DerivedSources-normal/arm64 -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/swift-nio.build/Debug-iphonesimulator/NIOPosix.build/DerivedSources/arm64 -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/swift-nio.build/Debug-iphonesimulator/NIOPosix.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/swift-nio.build/Debug-iphonesimulator/NIOPosix.build/Objects-normal/arm64/NIOPosix-Swift.h -working-directory /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal.xcodeproj -experimental-emit-module-separately -disable-cmo
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ NIOPosix (in target 'NIOPosix' from project 'swift-nio')
+
+EmitSwiftModule normal arm64 (in target 'NIOPosix' from project 'swift-nio')
+    cd /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal.xcodeproj
+    
+
+SwiftCompile normal arm64 Compiling\ NonBlockingFileIO.swift /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-nio/Sources/NIOPosix/NonBlockingFileIO.swift (in target 'NIOPosix' from project 'swift-nio')
+
+SwiftCompile normal arm64 /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-nio/Sources/NIOPosix/NonBlockingFileIO.swift (in target 'NIOPosix' from project 'swift-nio')
+    cd /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal.xcodeproj
+    
+
+SwiftCompile normal arm64 Compiling\ HapticManager.swift,\ KeychainService.swift,\ LaunchScreenView.swift,\ LicensesView.swift,\ OnboardingManager.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Utilities/HapticManager.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Core/Services/KeychainService.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Launch/LaunchScreenView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Legal/LicensesView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Onboarding/OnboardingManager.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Utilities/HapticManager.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Core/Services/KeychainService.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Launch/LaunchScreenView.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Legal/LicensesView.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Onboarding/OnboardingManager.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 Compiling\ PortForwardService.swift,\ PortForwardingView.swift,\ PrivacyPolicyView.swift,\ SFTPService.swift,\ SSHKeyManager.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/PortForwarding/PortForwardService.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/PortForwarding/PortForwardingView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Legal/PrivacyPolicyView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/SFTP/SFTPService.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Core/Services/SSHKeyManager.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/PortForwarding/PortForwardService.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/PortForwarding/PortForwardingView.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Legal/PrivacyPolicyView.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/SFTP/SFTPService.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Core/Services/SSHKeyManager.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 Compiling\ AIAssistantView.swift,\ AIService.swift,\ AISettingsView.swift,\ AboutView.swift,\ AccessibilityHelpers.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/AI/Views/AIAssistantView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Core/Services/AIService.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/AI/Views/AISettingsView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Settings/AboutView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Utilities/AccessibilityHelpers.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/AI/Views/AIAssistantView.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Core/Services/AIService.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/AI/Views/AISettingsView.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Settings/AboutView.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Utilities/AccessibilityHelpers.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 Compiling\ CommandHistoryView.swift,\ CommandSuggestionView.swift,\ EmptyStateView.swift,\ ErrorExplanationView.swift,\ FileBrowserView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Terminal/CommandHistoryView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/AI/Views/CommandSuggestionView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Utilities/Views/EmptyStateView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/AI/Views/ErrorExplanationView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/SFTP/FileBrowserView.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Terminal/CommandHistoryView.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/AI/Views/CommandSuggestionView.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Utilities/Views/EmptyStateView.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/AI/Views/ErrorExplanationView.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/SFTP/FileBrowserView.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 Compiling\ AnimationConstants.swift,\ AppIconGenerator.swift,\ AppearanceSettingsView.swift,\ BackupSettingsView.swift,\ CommandHistory.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Utilities/AnimationConstants.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Resources/Branding/AppIconGenerator.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Settings/AppearanceSettingsView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Settings/BackupSettingsView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Terminal/CommandHistory.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Utilities/AnimationConstants.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Resources/Branding/AppIconGenerator.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Settings/AppearanceSettingsView.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Settings/BackupSettingsView.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Terminal/CommandHistory.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 Compiling\ SSHService.swift,\ SSHSession.swift,\ SSHTerminalApp.swift,\ SecuritySettingsView.swift,\ ServerListView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Core/Services/SSHService.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Core/Models/SSHSession.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/App/SSHTerminalApp.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Settings/SecuritySettingsView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/ServerList/Views/ServerListView.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+Failed frontend command:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend -frontend -c /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/AI/Views/AIAssistantView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Core/Services/AIService.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/AI/Views/AISettingsView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Settings/AboutView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Utilities/AccessibilityHelpers.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Utilities/AnimationConstants.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Resources/Branding/AppIconGenerator.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Settings/AppearanceSettingsView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Settings/BackupSettingsView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Terminal/CommandHistory.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Terminal/CommandHistoryView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/AI/Views/CommandSuggestionView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Utilities/Views/EmptyStateView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/AI/Views/ErrorExplanationView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/SFTP/FileBrowserView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Utilities/HapticManager.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Core/Services/KeychainService.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Launch/LaunchScreenView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Legal/LicensesView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Onboarding/OnboardingManager.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/PortForwarding/PortForwardService.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/PortForwarding/PortForwardingView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Legal/PrivacyPolicyView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/SFTP/SFTPService.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Core/Services/SSHKeyManager.swift -primary-file /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Core/Services/SSHService.swift -primary-file /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Core/Models/SSHSession.swift -primary-file /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/App/SSHTerminalApp.swift -primary-file /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Settings/SecuritySettingsView.swift -primary-file /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/ServerList/Views/ServerListView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/ServerList/ViewModels/ServerListViewModel.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Core/Models/ServerProfile.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Core/Repositories/ServerRepository.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/SessionManager/SessionManager.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Settings/SettingsView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Snippets/Snippet.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Snippets/SnippetLibraryView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Snippets/SnippetRepository.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Terminal/Views/TerminalEmulatorView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Terminal/Views/TerminalKeyboardToolbar.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Terminal/Views/TerminalSettingsView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Terminal/Views/TerminalView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Terminal/ViewModels/TerminalViewModel.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Legal/TermsOfServiceView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Onboarding/WelcomeView.swift /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/DerivedSources/GeneratedAssetSymbols.swift -supplementary-output-file-map /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/Objects-normal/arm64/supplementaryOutputs-6 -target arm64-apple-ios17.0-simulator -module-can-import-version DeveloperToolsSupport 23.0.4 23.0.4 -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libFoundationMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#FoundationMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libObservationMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#ObservationMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libPreviewsMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#PreviewsMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libSwiftMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#SwiftMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libSwiftUIMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#SwiftUIMacros -disable-implicit-swift-modules -Xcc -fno-implicit-modules -Xcc -fno-implicit-module-maps -explicit-swift-module-map-file /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/Objects-normal/arm64/SSHTerminal-dependencies-1.json -Xllvm -aarch64-use-tbi -enable-objc-interop -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -I /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator -no-color-diagnostics -Xcc -fno-color-diagnostics -enable-testing -g -debug-info-format\=dwarf -dwarf-version\=4 -module-cache-path /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -swift-version 6 -enforce-exclusivity\=checked -Onone -D DEBUG -serialize-debugging-options -const-gather-protocols-file /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/Objects-normal/arm64/SSHTerminal_const_extract_protocols.json -enable-experimental-feature DebugDescriptionMacro -empty-abi-descriptor -validate-clang-modules-once -clang-build-session-file /Users/daniel/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -working-directory -Xcc /Users/daniel/Development/Projects/SSHTerminal -enable-anonymous-context-mangled-names -file-compilation-dir /Users/daniel/Development/Projects/SSHTerminal -Xcc -fmodule-map-file\=/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/CNIOPosix.modulemap -Xcc -fmodule-map-file\=/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/CNIOWASI.modulemap -Xcc -fmodule-map-file\=/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/CNIOLinux.modulemap -Xcc -fmodule-map-file\=/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/CNIODarwin.modulemap -Xcc -fmodule-map-file\=/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/CNIOOpenBSD.modulemap -Xcc -fmodule-map-file\=/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/CNIOAtomics.modulemap -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -Xcc -ivfsstatcache -Xcc /Users/daniel/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.2-23C53-7d00a8b37fbd7999ea79df8ebc024bf0.sdkstatcache -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/SSHTerminal-generated-files.hmap -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/SSHTerminal-own-target-headers.hmap -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/SSHTerminal-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal-4fd661df79a9f6d2539e1897bbbc7795-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/SSHTerminal-project-headers.hmap -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-nio/Sources/CNIOPosix/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-nio/Sources/CNIOWASI/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-nio/Sources/CNIOWindows/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-nio/Sources/CNIOLinux/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-nio/Sources/CNIODarwin/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-nio/Sources/CNIOOpenBSD/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-nio/Sources/CNIOAtomics/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-atomics/Sources/_AtomicsShims/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-crypto/Sources/CCryptoBoringSSLShims/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/swift-crypto/Sources/CCryptoBoringSSL/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/SourcePackages/checkouts/Citadel/Sources/CCitadelBcrypt/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/DerivedSources-normal/arm64 -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/DerivedSources/arm64 -Xcc -I/Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/DerivedSources -Xcc -DDEBUG\=1 -no-auto-bridging-header-chaining -module-name SSHTerminal -frontend-parseable-output -disable-clang-spi -target-sdk-version 26.2 -target-sdk-name iphonesimulator26.2 -clang-target arm64-apple-ios26.2-simulator -in-process-plugin-server-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/libSwiftInProcPluginServer.dylib -o /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/Objects-normal/arm64/SSHService.o -o /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/Objects-normal/arm64/SSHSession.o -o /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/Objects-normal/arm64/SSHTerminalApp.o -o /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/Objects-normal/arm64/SecuritySettingsView.o -o /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/Objects-normal/arm64/ServerListView.o -index-unit-output-path /SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/Objects-normal/arm64/SSHService.o -index-unit-output-path /SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/Objects-normal/arm64/SSHSession.o -index-unit-output-path /SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/Objects-normal/arm64/SSHTerminalApp.o -index-unit-output-path /SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/Objects-normal/arm64/SecuritySettingsView.o -index-unit-output-path /SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/Objects-normal/arm64/ServerListView.o -index-store-path /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Index.noindex/DataStore -index-system-modules
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Core/Services/SSHService.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+/Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Core/Services/SSHService.swift:57:54: error: capture of 'authMethod' with non-Sendable type 'SSHAuthenticationMethod' in a '@Sendable' closure
+                authenticationMethod: { @Sendable in authMethod },
+                                                     ^
+Citadel.SSHAuthenticationMethod:1:20: note: class 'SSHAuthenticationMethod' does not conform to the 'Sendable' protocol
+final public class SSHAuthenticationMethod : NIOSSH.NIOSSHClientUserAuthenticationDelegate {
+                   ^
+/Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Core/Services/SSHService.swift:10:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'Citadel' as warnings
+import Citadel
+^
+@preconcurrency 
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Core/Models/SSHSession.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/App/SSHTerminalApp.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Settings/SecuritySettingsView.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/ServerList/Views/ServerListView.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ SSHTerminal (in target 'SSHTerminal' from project 'SSHTerminal')
+EmitSwiftModule normal arm64 (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 Compiling\ TerminalViewModel.swift,\ TermsOfServiceView.swift,\ WelcomeView.swift,\ GeneratedAssetSymbols.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Terminal/ViewModels/TerminalViewModel.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Legal/TermsOfServiceView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Onboarding/WelcomeView.swift /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Terminal/ViewModels/TerminalViewModel.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Legal/TermsOfServiceView.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Onboarding/WelcomeView.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 /Users/daniel/Library/Developer/Xcode/DerivedData/SSHTerminal-fmapfhpdmeruwgafcvuxgvjxevik/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphonesimulator/SSHTerminal.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+    cd /Users/daniel/Development/Projects/SSHTerminal
+    
+
+SwiftCompile normal arm64 Compiling\ SettingsView.swift,\ Snippet.swift,\ SnippetLibraryView.swift,\ SnippetRepository.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Settings/SettingsView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Snippets/Snippet.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Snippets/SnippetLibraryView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Snippets/SnippetRepository.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 Compiling\ SSHService.swift,\ SSHSession.swift,\ SSHTerminalApp.swift,\ SecuritySettingsView.swift,\ ServerListView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Core/Services/SSHService.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Core/Models/SSHSession.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/App/SSHTerminalApp.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Settings/SecuritySettingsView.swift /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/ServerList/Views/ServerListView.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+	SwiftCompile normal arm64 /Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Core/Services/SSHService.swift (in target 'SSHTerminal' from project 'SSHTerminal')
+	Building project SSHTerminal with scheme SSHTerminal
+(3 failures)

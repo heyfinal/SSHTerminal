@@ -1,0 +1,23 @@
+{
+  "/Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Core/Models/ServerProfile.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/ServerProfile.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/ServerProfile.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/ServerProfile.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/ServerProfile.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/ServerProfile.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Core/Repositories/ServerRepository.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/ServerRepository.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/ServerRepository.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/ServerRepository.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/ServerRepository.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/ServerRepository.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/SessionManager/SessionManager.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/SessionManager.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/SessionManager.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/SessionManager.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/SessionManager.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/SessionManager.swiftdeps"
+  }
+}

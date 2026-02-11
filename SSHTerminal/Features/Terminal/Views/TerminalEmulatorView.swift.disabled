@@ -1,0 +1,84 @@
+//
+//  TerminalEmulatorView.swift
+//  SSHTerminal
+//
+//  Professional terminal emulator using SwiftTerm
+//
+
+import SwiftUI
+import SwiftTerm
+import AudioToolbox
+
+struct TerminalEmulatorView: UIViewRepresentable {
+    @ObservedObject var viewModel: TerminalViewModel
+    
+    func makeUIView(context: Context) -> TerminalView {
+        let terminalView = TerminalView()
+        
+        // Configure terminal appearance
+        terminalView.font = UIFont.monospacedSystemFont(ofSize: 14, weight: .regular)
+        terminalView.backgroundColor = .black
+        terminalView.terminalDelegate = context.coordinator
+        
+        // Set terminal options
+        terminalView.optionAsMetaKey = true
+        terminalView.installColors(TerminalView.getBuiltInColors(theme: .defaultDark))
+        
+        // Configure terminal size (80x24 is standard)
+        terminalView.getTerminal().resize(cols: 80, rows: 24)
+        
+        return terminalView
+    }
+    
+    func updateUIView(_ terminalView: TerminalView, context: Context) {
+        // Update terminal with new output
+        if !viewModel.pendingOutput.isEmpty {
+            let data = [UInt8](viewModel.pendingOutput.utf8)
+            terminalView.feed(byteArray: data)
+            viewModel.clearPendingOutput()
+        }
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(viewModel: viewModel)
+    }
+    
+    class Coordinator: NSObject, TerminalViewDelegate {
+        var viewModel: TerminalViewModel
+        
+        init(viewModel: TerminalViewModel) {
+            self.viewModel = viewModel
+        }
+        
+        func send(source: TerminalView, data: ArraySlice<UInt8>) {
+            let string = String(bytes: data, encoding: .utf8) ?? ""
+            Task { @MainActor in
+                await viewModel.sendInput(string)
+            }
+        }
+        
+        func setTerminalTitle(source: TerminalView, title: String) {}
+        func hostCurrentDirectoryUpdate(source: TerminalView, directory: String?) {}
+        func scrolled(source: TerminalView, position: Double) {}
+        func requestOpenLink(source: TerminalView, link: String, params: [String: String]) {}
+        
+        func sizeChanged(source: TerminalView, newCols: Int, newRows: Int) {
+            Task { @MainActor in
+                await viewModel.resizeTerminal(cols: newCols, rows: newRows)
+            }
+        }
+        
+        func bell(source: TerminalView) {
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+        }
+        
+        func clipboardCopy(source: TerminalView, content: Data) {
+            if let string = String(data: content, encoding: .utf8) {
+                UIPasteboard.general.string = string
+            }
+        }
+        
+        func rangeChanged(source: TerminalView, startY: Int, endY: Int) {}
+        func iTermContent(source: TerminalView, content: ArraySlice<UInt8>) {}
+    }
+}

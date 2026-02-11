@@ -1,0 +1,51 @@
+{
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio/Sources/NIOCore/NIOLoopBound.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/NIOLoopBound.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/NIOLoopBound.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/NIOLoopBound.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/NIOLoopBound.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/NIOLoopBound.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio/Sources/NIOCore/NIOPooledRecvBufferAllocator.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/NIOPooledRecvBufferAllocator.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/NIOPooledRecvBufferAllocator.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/NIOPooledRecvBufferAllocator.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/NIOPooledRecvBufferAllocator.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/NIOPooledRecvBufferAllocator.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio/Sources/NIOCore/NIOScheduledCallback.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/NIOScheduledCallback.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/NIOScheduledCallback.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/NIOScheduledCallback.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/NIOScheduledCallback.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/NIOScheduledCallback.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio/Sources/NIOCore/NIOSendable.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/NIOSendable.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/NIOSendable.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/NIOSendable.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/NIOSendable.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/NIOSendable.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio/Sources/NIOCore/NIOSplitLinesMessageDecoder.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/NIOSplitLinesMessageDecoder.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/NIOSplitLinesMessageDecoder.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/NIOSplitLinesMessageDecoder.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/NIOSplitLinesMessageDecoder.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/NIOSplitLinesMessageDecoder.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio/Sources/NIOCore/RecvByteBufferAllocator.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/RecvByteBufferAllocator.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/RecvByteBufferAllocator.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/RecvByteBufferAllocator.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/RecvByteBufferAllocator.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/RecvByteBufferAllocator.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio/Sources/NIOCore/SingleStepByteToMessageDecoder.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/SingleStepByteToMessageDecoder.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/SingleStepByteToMessageDecoder.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/SingleStepByteToMessageDecoder.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/SingleStepByteToMessageDecoder.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOCore.build/Objects-normal/arm64/SingleStepByteToMessageDecoder.swiftdeps"
+  }
+}

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>12</integer>
+	<key>logs</key>
+	<dict>
+		<key>C4E6E295-175C-4FB3-A6B8-B01E8592DE4E</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>C4E6E295-175C-4FB3-A6B8-B01E8592DE4E.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>SSHTerminal project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>SSHTerminal</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Cleaning project SSHTerminal with scheme SSHTerminal and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>792473161.15313196</real>
+			<key>timeStoppedRecording</key>
+			<real>792473161.59235895</real>
+			<key>title</key>
+			<string>Cleaning project SSHTerminal with scheme SSHTerminal and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>C4E6E295-175C-4FB3-A6B8-B01E8592DE4E</string>
+		</dict>
+		<key>FEC8C31F-A9CB-4AA8-85B2-C6CE5401EEE0</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>FEC8C31F-A9CB-4AA8-85B2-C6CE5401EEE0.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>SSHTerminal project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>SSHTerminal</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Cleaning project SSHTerminal with scheme SSHTerminal and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>792473150.66464198</real>
+			<key>timeStoppedRecording</key>
+			<real>792473151.50693798</real>
+			<key>title</key>
+			<string>Cleaning project SSHTerminal with scheme SSHTerminal and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>FEC8C31F-A9CB-4AA8-85B2-C6CE5401EEE0</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

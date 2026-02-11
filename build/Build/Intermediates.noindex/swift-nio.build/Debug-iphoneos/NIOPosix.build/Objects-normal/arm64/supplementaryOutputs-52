@@ -1,0 +1,37 @@
+{
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio/Sources/NIOPosix/UnsafeTransfer.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/UnsafeTransfer.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/UnsafeTransfer.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/UnsafeTransfer.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/UnsafeTransfer.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/UnsafeTransfer.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio/Sources/NIOPosix/Utilities.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/Utilities.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/Utilities.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/Utilities.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/Utilities.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/Utilities.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio/Sources/NIOPosix/VsockAddress.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/VsockAddress.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/VsockAddress.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/VsockAddress.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/VsockAddress.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/VsockAddress.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio/Sources/NIOPosix/VsockChannelEvents.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/VsockChannelEvents.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/VsockChannelEvents.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/VsockChannelEvents.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/VsockChannelEvents.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/VsockChannelEvents.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio/Sources/NIOPosix/Windows.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/Windows.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/Windows.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/Windows.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/Windows.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/Windows.swiftdeps"
+  }
+}

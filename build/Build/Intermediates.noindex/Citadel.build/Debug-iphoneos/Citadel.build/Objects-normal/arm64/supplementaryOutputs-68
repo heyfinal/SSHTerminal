@@ -1,0 +1,30 @@
+{
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/Citadel/Sources/Citadel/SFTP/Client/SFTPClient.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/SFTPClient.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/SFTPClient.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/SFTPClient.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/SFTPClient.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/SFTPClient.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/Citadel/Sources/Citadel/SFTP/Client/SFTPClientInboundHandler.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/SFTPClientInboundHandler.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/SFTPClientInboundHandler.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/SFTPClientInboundHandler.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/SFTPClientInboundHandler.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/SFTPClientInboundHandler.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/Citadel/Sources/Citadel/SFTP/Client/SFTPFile.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/SFTPFile.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/SFTPFile.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/SFTPFile.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/SFTPFile.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/SFTPFile.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/Citadel/Sources/Citadel/SFTP/SFTPBasicEnums.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/SFTPBasicEnums.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/SFTPBasicEnums.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/SFTPBasicEnums.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/SFTPBasicEnums.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/SFTPBasicEnums.swiftdeps"
+  }
+}

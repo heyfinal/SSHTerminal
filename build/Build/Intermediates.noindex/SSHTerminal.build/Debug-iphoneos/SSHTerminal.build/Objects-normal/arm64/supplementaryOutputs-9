@@ -1,0 +1,23 @@
+{
+  "/Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Snippets/Snippet.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/Snippet.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/Snippet.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/Snippet.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/Snippet.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/Snippet.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Snippets/SnippetLibraryView.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/SnippetLibraryView.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/SnippetLibraryView.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/SnippetLibraryView.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/SnippetLibraryView.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/SnippetLibraryView.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/SSHTerminal/Features/Snippets/SnippetRepository.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/SnippetRepository.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/SnippetRepository.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/SnippetRepository.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/SnippetRepository.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SSHTerminal.build/Debug-iphoneos/SSHTerminal.build/Objects-normal/arm64/SnippetRepository.swiftdeps"
+  }
+}

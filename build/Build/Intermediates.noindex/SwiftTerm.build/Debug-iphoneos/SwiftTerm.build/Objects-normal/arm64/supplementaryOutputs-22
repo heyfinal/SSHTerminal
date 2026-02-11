@@ -1,0 +1,30 @@
+{
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/SwiftTerm/Sources/SwiftTerm/iOS/iOSKeyboardView.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/iOSKeyboardView.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/iOSKeyboardView.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/iOSKeyboardView.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/iOSKeyboardView.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/iOSKeyboardView.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/SwiftTerm/Sources/SwiftTerm/iOS/iOSTerminalView.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/iOSTerminalView.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/iOSTerminalView.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/iOSTerminalView.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/iOSTerminalView.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/iOSTerminalView.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/SwiftTerm/Sources/SwiftTerm/iOS/iOSTextInput.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/iOSTextInput.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/iOSTextInput.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/iOSTextInput.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/iOSTextInput.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/iOSTextInput.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/SwiftTerm/Sources/SwiftTerm/iOS/iOSTextStorage.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/iOSTextStorage.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/iOSTextStorage.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/iOSTextStorage.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/iOSTextStorage.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/iOSTextStorage.swiftdeps"
+  }
+}

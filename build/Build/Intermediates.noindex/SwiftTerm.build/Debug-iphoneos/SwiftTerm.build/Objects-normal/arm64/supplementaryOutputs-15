@@ -1,0 +1,37 @@
+{
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/SwiftTerm/Sources/SwiftTerm/CharData.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/CharData.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/CharData.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/CharData.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/CharData.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/CharData.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/SwiftTerm/Sources/SwiftTerm/CharSets.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/CharSets.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/CharSets.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/CharSets.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/CharSets.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/CharSets.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/SwiftTerm/Sources/SwiftTerm/CircularList.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/CircularList.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/CircularList.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/CircularList.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/CircularList.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/CircularList.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/SwiftTerm/Sources/SwiftTerm/Colors.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/Colors.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/Colors.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/Colors.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/Colors.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/Colors.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/SwiftTerm/Sources/SwiftTerm/EscapeSequenceParser.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/EscapeSequenceParser.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/EscapeSequenceParser.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/EscapeSequenceParser.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/EscapeSequenceParser.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/SwiftTerm.build/Debug-iphoneos/SwiftTerm.build/Objects-normal/arm64/EscapeSequenceParser.swiftdeps"
+  }
+}

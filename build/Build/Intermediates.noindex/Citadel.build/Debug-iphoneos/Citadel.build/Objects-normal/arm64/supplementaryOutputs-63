@@ -1,0 +1,30 @@
+{
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/Citadel/Sources/Citadel/Algorithms/AES.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/AES.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/AES.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/AES.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/AES.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/AES.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/Citadel/Sources/Citadel/Algorithms/DH-Helpers.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/DH-Helpers.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/DH-Helpers.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/DH-Helpers.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/DH-Helpers.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/DH-Helpers.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/Citadel/Sources/Citadel/Algorithms/DiffieHellmanGroup14Sha1.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/DiffieHellmanGroup14Sha1.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/DiffieHellmanGroup14Sha1.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/DiffieHellmanGroup14Sha1.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/DiffieHellmanGroup14Sha1.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/DiffieHellmanGroup14Sha1.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/Citadel/Sources/Citadel/Algorithms/DiffieHellmanGroup14Sha256.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/DiffieHellmanGroup14Sha256.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/DiffieHellmanGroup14Sha256.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/DiffieHellmanGroup14Sha256.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/DiffieHellmanGroup14Sha256.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/Citadel.build/Debug-iphoneos/Citadel.build/Objects-normal/arm64/DiffieHellmanGroup14Sha256.swiftdeps"
+  }
+}

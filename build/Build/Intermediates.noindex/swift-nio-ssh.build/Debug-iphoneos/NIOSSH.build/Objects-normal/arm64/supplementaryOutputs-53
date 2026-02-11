@@ -1,0 +1,51 @@
+{
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio-ssh/Sources/NIOSSH/ByteBuffer+SSH.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ByteBuffer+SSH.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ByteBuffer+SSH.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ByteBuffer+SSH.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ByteBuffer+SSH.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ByteBuffer+SSH.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio-ssh/Sources/NIOSSH/CSPRNG/CSPRNG.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/CSPRNG.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/CSPRNG.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/CSPRNG.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/CSPRNG.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/CSPRNG.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio-ssh/Sources/NIOSSH/Child Channels/ChildChannelOptions.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ChildChannelOptions.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ChildChannelOptions.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ChildChannelOptions.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ChildChannelOptions.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ChildChannelOptions.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio-ssh/Sources/NIOSSH/Child Channels/ChildChannelStateMachine.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ChildChannelStateMachine.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ChildChannelStateMachine.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ChildChannelStateMachine.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ChildChannelStateMachine.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ChildChannelStateMachine.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio-ssh/Sources/NIOSSH/Child Channels/ChildChannelUserEvents.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ChildChannelUserEvents.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ChildChannelUserEvents.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ChildChannelUserEvents.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ChildChannelUserEvents.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ChildChannelUserEvents.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio-ssh/Sources/NIOSSH/Child Channels/ChildChannelWindowManager.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ChildChannelWindowManager.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ChildChannelWindowManager.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ChildChannelWindowManager.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ChildChannelWindowManager.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ChildChannelWindowManager.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio-ssh/Sources/NIOSSH/Child Channels/ChildChannelWritabilityManager.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ChildChannelWritabilityManager.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ChildChannelWritabilityManager.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ChildChannelWritabilityManager.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ChildChannelWritabilityManager.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio-ssh.build/Debug-iphoneos/NIOSSH.build/Objects-normal/arm64/ChildChannelWritabilityManager.swiftdeps"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio/Sources/NIOPosix/SelectableEventLoop.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/SelectableEventLoop.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/SelectableEventLoop.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/SelectableEventLoop.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/SelectableEventLoop.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/SelectableEventLoop.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio/Sources/NIOPosix/SelectorEpoll.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/SelectorEpoll.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/SelectorEpoll.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/SelectorEpoll.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/SelectorEpoll.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/SelectorEpoll.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio/Sources/NIOPosix/SelectorGeneric.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/SelectorGeneric.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/SelectorGeneric.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/SelectorGeneric.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/SelectorGeneric.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/SelectorGeneric.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio/Sources/NIOPosix/SelectorKqueue.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/SelectorKqueue.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/SelectorKqueue.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/SelectorKqueue.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/SelectorKqueue.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/SelectorKqueue.swiftdeps"
+  },
+  "/Users/daniel/Development/Projects/SSHTerminal/build/SourcePackages/checkouts/swift-nio/Sources/NIOPosix/SelectorUring.swift" : {
+    "const-values" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/SelectorUring.swiftconstvalues",
+    "dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/SelectorUring.d",
+    "diagnostics" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/SelectorUring.dia",
+    "object" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/SelectorUring.o",
+    "swift-dependencies" : "/Users/daniel/Development/Projects/SSHTerminal/build/Build/Intermediates.noindex/swift-nio.build/Debug-iphoneos/NIOPosix.build/Objects-normal/arm64/SelectorUring.swiftdeps"
+  }
+}
