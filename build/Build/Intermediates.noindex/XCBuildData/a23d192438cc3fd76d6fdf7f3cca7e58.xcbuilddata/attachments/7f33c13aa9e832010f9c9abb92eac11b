@@ -1,4 +1,0 @@
-module NIOSSH {
-header "NIOSSH-Swift.h"
-export *
-}

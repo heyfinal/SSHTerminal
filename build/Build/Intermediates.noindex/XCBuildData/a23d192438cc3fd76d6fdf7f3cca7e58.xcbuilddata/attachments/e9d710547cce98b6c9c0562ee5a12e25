@@ -1,4 +1,0 @@
-module BigInt {
-header "BigInt-Swift.h"
-export *
-}
