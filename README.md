@@ -159,12 +159,15 @@ open SSHTerminal.xcodeproj
 
 ### Test Server
 
-Use the included Kali server for testing:
+Use your own SSH server or set up a test environment:
 
-```
-Host: ***REMOVED***
-User: daniel
-Pass: ***REMOVED***
+```bash
+# Install SSH server on Linux/Mac
+sudo apt-get install openssh-server  # Debian/Ubuntu
+brew install openssh                  # macOS
+
+# Create test user
+sudo adduser testuser
 ```
 
 ### Run Tests

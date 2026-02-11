@@ -9,7 +9,7 @@ class CommandAIService: ObservableObject {
     @Published var isEnabled: Bool = true
     
     // Ollama server on Kali
-    private let ollamaEndpoint = "http://***REMOVED***:11434/api/generate"
+    private let ollamaEndpoint = "http://localhost:11434/api/generate"
     private let model = "deepseek-coder:6.7b" // Best for code/commands
     
     private init() {
@@ -88,7 +88,7 @@ class CommandAIService: ObservableObject {
     
     /// Check if Ollama server is healthy
     private func checkServerHealth() async {
-        guard let url = URL(string: "http://***REMOVED***:11434/api/tags") else {
+        guard let url = URL(string: "http://localhost:11434/api/tags") else {
             isEnabled = false
             return
         }

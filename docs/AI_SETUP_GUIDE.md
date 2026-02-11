@@ -91,7 +91,7 @@ Edit `SSHTerminal/Core/Services/CommandAIService.swift`:
 private let ollamaEndpoint = "http://localhost:11434/api/generate"
 
 // Remote server
-private let ollamaEndpoint = "http://***REMOVED***:11434/api/generate"
+private let ollamaEndpoint = "http://YOUR_SERVER_IP:11434/api/generate"
 ```
 
 ### 5. Rebuild App
@@ -107,7 +107,7 @@ xcodebuild -scheme SSHTerminal clean build
 
 ```bash
 # SSH into your Kali server
-ssh daniel@***REMOVED***
+ssh user@your-server-ip
 
 # Install Ollama
 curl -fsSL https://ollama.com/install.sh | sh
@@ -131,10 +131,10 @@ curl http://localhost:11434/api/tags
 From your Mac:
 ```bash
 # Test connection
-curl http://***REMOVED***:11434/api/tags
+curl http://YOUR_SERVER_IP:11434/api/tags
 
 # Test AI
-curl -X POST http://***REMOVED***:11434/api/generate \
+curl -X POST http://YOUR_SERVER_IP:11434/api/generate \
   -H "Content-Type: application/json" \
   -d '{
     "model": "deepseek-coder:6.7b",

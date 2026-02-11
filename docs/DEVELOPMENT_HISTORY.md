@@ -26,7 +26,7 @@ iOS SSH Terminal app with PTY integration, SwiftTerm native terminal emulator, a
 ### Ollama AI Integration (Feb 11, 2026)
 **Feature:** Natural language → bash command conversion
 **Implementation:**
-- CommandAIService using local Ollama server (Kali: ***REMOVED***:11434)
+- CommandAIService using local Ollama server
 - Model: deepseek-coder:6.7b (optimized for code)
 - Magic wand button (⭐) in keyboard toolbar
 - Quick templates for common commands
@@ -66,10 +66,10 @@ iOS SSH Terminal app with PTY integration, SwiftTerm native terminal emulator, a
 ## External Dependencies
 - **Citadel** (forked): SSH client library
 - **SwiftTerm**: Native terminal emulator
-- **Ollama**: Local LLM server on Kali (***REMOVED***)
+- **Ollama**: Local LLM server
 
 ## Testing
-- Kali server: `daniel@***REMOVED***` (password: ***REMOVED***)
+- Kali server: Local network test server
 - Ollama models: deepseek-coder:6.7b, dolphin-mistral:7b-v2.8, tinyllama:latest
 - Simulator: iPhone 16 Pro (iOS 18.6)
 
