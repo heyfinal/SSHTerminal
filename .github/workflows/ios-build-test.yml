@@ -1,0 +1,32 @@
+name: iOS Build & Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+env:
+  SCHEME: SSHTerminal
+  PLATFORM: iOS Simulator
+  DEVICE: iPhone 16 Pro
+
+jobs:
+  build:
+    name: Build & Test
+    runs-on: macos-14
+    
+    steps:
+    - name: 📥 Checkout
+      uses: actions/checkout@v4
+    
+    - name: 🔍 Xcode Version
+      run: xcodebuild -version
+    
+    - name: 🏗️ Build
+      run: |
+        xcodebuild clean build \
+          -scheme "${{ env.SCHEME }}" \
+          -destination "platform=${{ env.PLATFORM }},name=${{ env.DEVICE }}" \
+          CODE_SIGNING_ALLOWED=NO
