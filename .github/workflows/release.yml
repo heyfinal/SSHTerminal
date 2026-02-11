@@ -1,0 +1,53 @@
+name: Release Build
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  release:
+    name: Create Release Build
+    runs-on: macos-14
+    
+    steps:
+    - name: 📥 Checkout Code
+      uses: actions/checkout@v4
+    
+    - name: 🔖 Get Version
+      id: version
+      run: |
+        VERSION=${GITHUB_REF#refs/tags/}
+        echo "version=$VERSION" >> $GITHUB_OUTPUT
+        echo "Building version: $VERSION"
+    
+    - name: 📦 Resolve Dependencies
+      run: |
+        xcodebuild -resolvePackageDependencies -scheme SSHTerminal
+    
+    - name: 🏗️ Build Release
+      run: |
+        xcodebuild clean build \
+          -scheme SSHTerminal \
+          -destination "generic/platform=iOS" \
+          -configuration Release \
+          CODE_SIGNING_ALLOWED=NO \
+          | xcpretty --color
+    
+    - name: 📝 Generate Release Notes
+      run: |
+        echo "## SSHTerminal ${{ steps.version.outputs.version }}" > release-notes.md
+        echo "" >> release-notes.md
+        echo "### What's New" >> release-notes.md
+        git log $(git describe --tags --abbrev=0 HEAD^)..HEAD --pretty=format:"- %s" >> release-notes.md
+    
+    - name: 📤 Create Release
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        body_path: release-notes.md
+        draft: true
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
