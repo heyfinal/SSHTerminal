@@ -7,7 +7,7 @@
                                                    
 ```
 
-# SSHTerminal
+# 🔐 SSHTerminal
 
 Modern iOS SSH terminal with **native PTY integration** and **AI-powered command assistance**.
 
