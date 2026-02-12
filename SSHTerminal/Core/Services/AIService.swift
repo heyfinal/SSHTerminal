@@ -18,7 +18,7 @@ class AIService: ObservableObject {
     // Configuration
     struct Config {
         static let openaiEndpoint = "https://api.openai.com/v1/chat/completions"
-        static let ollamaEndpoint = "http://localhost:11434/api/chat"
+        static let ollamaEndpoint = "http://192.168.1.151:11434/api/chat"  // Kali AI Server
         static let maxRequestsPerMinute = 20
         static let rateLimitWindowSeconds: TimeInterval = 60
         static let requestTimeoutSeconds: TimeInterval = 30
