@@ -56,7 +56,7 @@ class SwiftTerminalViewModel: ObservableObject {
             Task {
                 do {
                     // Create PTY session with current terminal dimensions
-                    let pty = try await sshService.createPTYSession(
+                    let pty = try sshService.createPTYSession(
                         for: session,
                         terminalSize: terminalSize
                     )
