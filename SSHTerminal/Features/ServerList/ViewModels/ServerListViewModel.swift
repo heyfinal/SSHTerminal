@@ -12,6 +12,8 @@ import Combine
 class ServerListViewModel: ObservableObject {
     @Published var servers: [ServerProfile] = []
     @Published var isShowingAddSheet = false
+    @Published var isShowingEditSheet = false
+    @Published var serverToEdit: ServerProfile?
     @Published var selectedServer: ServerProfile?
     @Published var isConnecting = false
     @Published var errorMessage: String?

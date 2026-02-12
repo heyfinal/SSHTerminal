@@ -42,6 +42,11 @@ struct ServerListView: View {
             .sheet(isPresented: $viewModel.isShowingAddSheet) {
                 AddServerView(viewModel: viewModel)
             }
+            .sheet(isPresented: $viewModel.isShowingEditSheet) {
+                if let server = viewModel.serverToEdit {
+                    EditServerView(viewModel: viewModel, server: server)
+                }
+            }
             .sheet(item: $viewModel.selectedServer) { server in
                 if let session = SSHService.shared.activeSessions.values.first(where: { $0.server.id == server.id }) {
                     TerminalView(session: session)
@@ -116,7 +121,8 @@ struct ServerListView: View {
                         showPasswordPrompt = true
                     },
                     onEdit: {
-                        // TODO: Implement edit
+                        viewModel.serverToEdit = server
+                        viewModel.isShowingEditSheet = true
                     },
                     onDelete: {
                         viewModel.deleteServer(server)
@@ -251,6 +257,102 @@ struct AddServerView: View {
         )
         
         viewModel.addServer(server)
+        dismiss()
+    }
+}
+
+struct EditServerView: View {
+    @Environment(\.dismiss) private var dismiss
+    @ObservedObject var viewModel: ServerListViewModel
+    let server: ServerProfile
+    
+    @State private var name = ""
+    @State private var host = ""
+    @State private var port = ""
+    @State private var username = ""
+    @State private var authType = AuthType.password
+    
+    var body: some View {
+        NavigationStack {
+            Form {
+                Section("Server Details") {
+                    TextField("Name", text: $name)
+                    TextField("Host", text: $host)
+                    TextField("Port", text: $port)
+                        .keyboardType(.numberPad)
+                    TextField("Username", text: $username)
+                }
+                
+                Section("Authentication") {
+                    Picker("Auth Type", selection: $authType) {
+                        ForEach(AuthType.allCases, id: \.self) { type in
+                            Text(type.rawValue.capitalized).tag(type)
+                        }
+                    }
+                }
+                
+                Section {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Created")
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                        Text(server.createdAt.formatted(date: .abbreviated, time: .shortened))
+                            .font(.subheadline)
+                        
+                        if let lastConnected = server.lastConnectedAt {
+                            Divider()
+                            Text("Last Connected")
+                                .font(.caption)
+                                .foregroundColor(.gray)
+                            Text(lastConnected.formatted(date: .abbreviated, time: .shortened))
+                                .font(.subheadline)
+                        }
+                    }
+                } header: {
+                    Text("Server Info")
+                }
+            }
+            .navigationTitle("Edit Server")
+            .navigationBarTitleDisplayMode(.inline)
+            .preferredColorScheme(.dark)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Cancel") {
+                        dismiss()
+                    }
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Save") {
+                        updateServer()
+                    }
+                    .disabled(!isValid)
+                }
+            }
+            .onAppear {
+                // Pre-populate fields with existing server data
+                name = server.name
+                host = server.host
+                port = String(server.port)
+                username = server.username
+                authType = server.authType
+            }
+        }
+    }
+    
+    private var isValid: Bool {
+        !name.isEmpty && !host.isEmpty && !username.isEmpty && Int(port) != nil
+    }
+    
+    private func updateServer() {
+        var updatedServer = server
+        updatedServer.name = name
+        updatedServer.host = host
+        updatedServer.port = Int(port) ?? 22
+        updatedServer.username = username
+        updatedServer.authType = authType
+        
+        viewModel.updateServer(updatedServer)
         dismiss()
     }
 }
