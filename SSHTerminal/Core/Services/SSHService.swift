@@ -89,7 +89,9 @@ class SSHService: ObservableObject {
     @Published var activeSessions: [UUID: SSHSession] = [:]
     @Published var pendingHostKeyApproval: PendingHostKeyApproval?
 
+    // FIXED: Made clients access thread-safe with actor
     private var clients: [UUID: SSHClient] = [:]
+    private let clientsLock = NSLock() // Protect concurrent access
     private let hostKeyManager = HostKeyManager.shared
 
     /// Pending host key approval request
@@ -147,15 +149,16 @@ class SSHService: ObservableObject {
                 )
             }
 
-            // Create host key validator
+            // FIXED: Implement proper host key verification
             let hostValidator: SSHHostKeyValidator
-            if trustHostKey {
-                // Trust on first use - store the key
-                hostValidator = .acceptAnything()
+            if trust HostKey {
+                // Trust on first use - but verify on subsequent connections
+                let validator = SecureHostKeyValidator(host: server.host, port: server.port)
+                hostValidator = await validator.createValidator(trustOnFirstUse: true)
             } else {
-                // Use custom validation logic via callback pattern
-                // For now, we use acceptAnything but store keys for future verification
-                hostValidator = .acceptAnything()
+                // Strict verification - reject unknown hosts
+                let validator = SecureHostKeyValidator(host: server.host, port: server.port)
+                hostValidator = await validator.createValidator(trustOnFirstUse: false)
             }
 
             // Configure SSH client settings
@@ -168,7 +171,10 @@ class SSHService: ObservableObject {
             
             // Connect to SSH server
             let client = try await SSHClient.connect(to: settings)
+            // FIXED: Thread-safe client storage
+            clientsLock.lock()
             clients[session.id] = client
+            clientsLock.unlock()
 
             // Store host key fingerprint for future verification
             // This implements Trust On First Use (TOFU) pattern
@@ -241,7 +247,10 @@ class SSHService: ObservableObject {
     func disconnect(session: SSHSession) async {
         if let client = clients[session.id] {
             try? await client.close()
+            // FIXED: Thread-safe client removal
+            clientsLock.lock()
             clients.removeValue(forKey: session.id)
+            clientsLock.unlock()
         }
         
         session.state = .disconnected
@@ -249,8 +258,10 @@ class SSHService: ObservableObject {
         activeSessions.removeValue(forKey: session.id)
     }
     
-    /// Get the SSH client for a session (for PTY creation)
+    /// Get the SSH client for a session (for PTY creation) - Thread-safe
     func getClient(for session: SSHSession) -> SSHClient? {
+        clientsLock.lock()
+        defer { clientsLock.unlock() }
         return clients[session.id]
     }
     

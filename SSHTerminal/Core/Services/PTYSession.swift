@@ -12,10 +12,11 @@ import Citadel
 
 /// Manages a persistent interactive shell with PTY for proper terminal behavior
 actor PTYSession {
-    nonisolated(unsafe) private let session: SSHSession
-    nonisolated(unsafe) private let client: SSHClient
-    nonisolated(unsafe) private var channel: Channel?
-    nonisolated(unsafe) private var writer: TTYStdinWriter?
+    // FIXED: Removed nonisolated(unsafe) - these are now properly isolated within the actor
+    private let session: SSHSession
+    private let client: SSHClient
+    private var channel: Channel?
+    private var writer: TTYStdinWriter?
     private var outputHandler: (@Sendable (Data) -> Void)?
     private var streamTask: Task<Void, Never>?
     
