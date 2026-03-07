@@ -8,8 +8,20 @@ class CommandAIService: ObservableObject {
     
     @Published var isEnabled: Bool = true
     
-    // Ollama server on Kali
-    private let ollamaEndpoint = "http://localhost:11434/api/generate"
+    // Ollama server (configurable via UserDefaults)
+    private var ollamaHost: String {
+        UserDefaults.standard.string(forKey: "ollama_host") ?? "localhost"
+    }
+    private var ollamaPort: Int {
+        let port = UserDefaults.standard.integer(forKey: "ollama_port")
+        return port > 0 ? port : 11434
+    }
+    private var ollamaEndpoint: String {
+        "http://\(ollamaHost):\(ollamaPort)/api/generate"
+    }
+    private var ollamaTagsEndpoint: String {
+        "http://\(ollamaHost):\(ollamaPort)/api/tags"
+    }
     private let model = "deepseek-coder:6.7b" // Best for code/commands
     
     private init() {
@@ -88,7 +100,7 @@ class CommandAIService: ObservableObject {
     
     /// Check if Ollama server is healthy
     private func checkServerHealth() async {
-        guard let url = URL(string: "http://localhost:11434/api/tags") else {
+        guard let url = URL(string: ollamaTagsEndpoint) else {
             isEnabled = false
             return
         }

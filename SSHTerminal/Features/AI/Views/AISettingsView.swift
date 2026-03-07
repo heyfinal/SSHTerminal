@@ -116,6 +116,31 @@ struct AISettingsView: View {
                     Text("Usage Statistics")
                 }
                 
+                // Local Ollama
+                Section {
+                    TextField("Host", text: Binding(
+                        get: { UserDefaults.standard.string(forKey: "ollama_host") ?? "localhost" },
+                        set: { UserDefaults.standard.set($0, forKey: "ollama_host") }
+                    ))
+                    .textInputAutocapitalization(.never)
+                    .autocorrectionDisabled()
+                    .font(.system(.body, design: .monospaced))
+
+                    TextField("Port", text: Binding(
+                        get: {
+                            let port = UserDefaults.standard.integer(forKey: "ollama_port")
+                            return port > 0 ? String(port) : "11434"
+                        },
+                        set: { UserDefaults.standard.set(Int($0) ?? 11434, forKey: "ollama_port") }
+                    ))
+                    .keyboardType(.numberPad)
+                    .font(.system(.body, design: .monospaced))
+                } header: {
+                    Text("Local Ollama Server")
+                } footer: {
+                    Text("For on-device AI via Ollama. Use your Mac's IP address when running on a physical device.")
+                }
+
                 // Features
                 Section {
                     FeatureRow(

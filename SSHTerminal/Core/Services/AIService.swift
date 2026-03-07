@@ -18,7 +18,12 @@ class AIService: ObservableObject {
     // Configuration
     struct Config {
         static let openaiEndpoint = "https://api.openai.com/v1/chat/completions"
-        static let ollamaEndpoint = "http://localhost:11434/api/chat"  // Use SSH tunnel or local Ollama
+        static var ollamaEndpoint: String {
+            let host = UserDefaults.standard.string(forKey: "ollama_host") ?? "localhost"
+            let port = UserDefaults.standard.integer(forKey: "ollama_port")
+            let actualPort = port > 0 ? port : 11434
+            return "http://\(host):\(actualPort)/api/chat"
+        }
         static let maxRequestsPerMinute = 20
         static let rateLimitWindowSeconds: TimeInterval = 60
         static let requestTimeoutSeconds: TimeInterval = 30
@@ -54,7 +59,7 @@ class AIService: ObservableObject {
 
     // Rate limiting state
     private var requestTimestamps: [Date] = []
-    private let rateLimitQueue = DispatchQueue(label: "com.sshterminal.ratelimit")
+
 
     enum AIModel: String, CaseIterable, Identifiable {
         // OpenAI Models
@@ -186,19 +191,31 @@ class AIService: ObservableObject {
         isEnabled = false
     }
     
+    // MARK: - Input Sanitization
+
+    private func sanitize(_ input: String, maxChars: Int = 200) -> String {
+        String(
+            input
+                .components(separatedBy: .newlines)
+                .joined(separator: " ")
+                .trimmingCharacters(in: .whitespacesAndNewlines)
+                .prefix(maxChars)
+        )
+    }
+
     // MARK: - Command Suggestions
-    
+
     func suggestCommands(context: CommandContext) async throws -> [CommandSuggestion] {
         guard isEnabled else { return [] }
         
         let prompt = """
         You are a helpful SSH terminal assistant. Based on the following context, suggest 3-5 useful bash commands the user might want to run next.
-        
-        Current Directory: \(context.currentDirectory)
-        Operating System: \(context.osInfo)
-        Last Command: \(context.lastCommand ?? "none")
-        Last Output: \(context.lastOutput?.prefix(200) ?? "none")
-        
+
+        Current Directory: \(sanitize(context.currentDirectory, maxChars: 100))
+        Operating System: \(sanitize(context.osInfo, maxChars: 100))
+        Last Command: \(sanitize(context.lastCommand ?? "none", maxChars: 200))
+        Last Output: \(sanitize(context.lastOutput ?? "none", maxChars: 300))
+
         Respond with ONLY a JSON array of objects with "command" and "description" fields. Example:
         [{"command": "ls -la", "description": "List all files with details"}]
         """
@@ -226,12 +243,12 @@ class AIService: ObservableObject {
         
         let prompt = """
         A user ran this command and got an error:
-        
-        Command: \(command)
-        Error: \(error)
-        Directory: \(context.currentDirectory)
-        OS: \(context.osInfo)
-        
+
+        Command: \(sanitize(command, maxChars: 200))
+        Error: \(sanitize(error, maxChars: 500))
+        Directory: \(sanitize(context.currentDirectory, maxChars: 100))
+        OS: \(sanitize(context.osInfo, maxChars: 100))
+
         Explain what went wrong in simple terms and suggest fixes. Respond with JSON:
         {
           "explanation": "Brief explanation",
@@ -257,11 +274,11 @@ class AIService: ObservableObject {
         
         let prompt = """
         Convert this natural language request to a bash command:
-        
-        Request: \(input)
-        Current Directory: \(context.currentDirectory)
-        OS: \(context.osInfo)
-        
+
+        Request: \(sanitize(input, maxChars: 200))
+        Current Directory: \(sanitize(context.currentDirectory, maxChars: 100))
+        OS: \(sanitize(context.osInfo, maxChars: 100))
+
         Respond with ONLY the bash command, no explanation or quotes.
         """
         
@@ -285,10 +302,10 @@ class AIService: ObservableObject {
         // System context
         let systemContext = """
         You are a helpful SSH terminal assistant. The user is currently:
-        - Directory: \(context.currentDirectory)
-        - OS: \(context.osInfo)
-        - Server: \(context.serverName)
-        
+        - Directory: \(sanitize(context.currentDirectory, maxChars: 100))
+        - OS: \(sanitize(context.osInfo, maxChars: 100))
+        - Server: \(sanitize(context.serverName, maxChars: 100))
+
         Help them with command questions, system administration, and troubleshooting.
         """
         messages.append(["role": "system", "content": systemContext])
@@ -297,9 +314,6 @@ class AIService: ObservableObject {
         for msg in history {
             messages.append(["role": msg.role, "content": msg.content])
         }
-        
-        // Current message
-        messages.append(["role": "user", "content": message])
         
         let response = try await makeAPIRequestWithMessages(
             messages: messages,
@@ -448,25 +462,17 @@ class AIService: ObservableObject {
     // MARK: - Rate Limiting
 
     private func checkLocalRateLimit() throws {
-        rateLimitQueue.sync {
-            // Clean up old timestamps
-            let cutoff = Date().addingTimeInterval(-Config.rateLimitWindowSeconds)
-            requestTimestamps = requestTimestamps.filter { $0 > cutoff }
-        }
+        let cutoff = Date().addingTimeInterval(-Config.rateLimitWindowSeconds)
+        requestTimestamps = requestTimestamps.filter { $0 > cutoff }
 
-        let currentCount = rateLimitQueue.sync { requestTimestamps.count }
-
-        if currentCount >= Config.maxRequestsPerMinute {
-            let oldestRequest = rateLimitQueue.sync { requestTimestamps.first }
-            let waitTime = Int((oldestRequest?.addingTimeInterval(Config.rateLimitWindowSeconds).timeIntervalSinceNow ?? 0) + 1)
+        if requestTimestamps.count >= Config.maxRequestsPerMinute {
+            let waitTime = Int((requestTimestamps.first?.addingTimeInterval(Config.rateLimitWindowSeconds).timeIntervalSinceNow ?? 0) + 1)
             throw AIError.localRateLimitExceeded(waitSeconds: max(1, waitTime))
         }
     }
 
     private func recordRequest() {
-        rateLimitQueue.sync {
-            requestTimestamps.append(Date())
-        }
+        requestTimestamps.append(Date())
     }
 
     private func handleAPIRateLimit(retryAfter: TimeInterval?) {
@@ -486,14 +492,9 @@ class AIService: ObservableObject {
     /// Get current rate limit status
     func getRateLimitStatus() -> (requestsRemaining: Int, windowResetIn: TimeInterval) {
         let cutoff = Date().addingTimeInterval(-Config.rateLimitWindowSeconds)
-        let recentRequests = rateLimitQueue.sync {
-            requestTimestamps.filter { $0 > cutoff }
-        }
-
+        let recentRequests = requestTimestamps.filter { $0 > cutoff }
         let remaining = max(0, Config.maxRequestsPerMinute - recentRequests.count)
-        let oldestInWindow = recentRequests.first
-        let resetIn = oldestInWindow?.addingTimeInterval(Config.rateLimitWindowSeconds).timeIntervalSinceNow ?? 0
-
+        let resetIn = recentRequests.first?.addingTimeInterval(Config.rateLimitWindowSeconds).timeIntervalSinceNow ?? 0
         return (remaining, max(0, resetIn))
     }
     

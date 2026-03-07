@@ -27,6 +27,7 @@ enum ConnectionState: Equatable {
     }
 }
 
+@MainActor
 class SSHSession: ObservableObject, Identifiable {
     let id: UUID
     let server: ServerProfile

@@ -162,16 +162,19 @@ class SSHKeyManager: ObservableObject {
     }
     
     private func loadKeys() {
-        if let data = UserDefaults.standard.data(forKey: "ssh_keys_metadata"),
-           let keys = try? JSONDecoder().decode([SSHKeyInfo].self, from: data) {
-            availableKeys = keys
+        guard let json = try? keychainService.retrieve(for: "ssh_keys_metadata"),
+              let data = json.data(using: .utf8),
+              let keys = try? JSONDecoder().decode([SSHKeyInfo].self, from: data) else {
+            availableKeys = []
+            return
         }
+        availableKeys = keys
     }
-    
+
     private func saveKeysMetadata() {
-        if let data = try? JSONEncoder().encode(availableKeys) {
-            UserDefaults.standard.set(data, forKey: "ssh_keys_metadata")
-        }
+        guard let data = try? JSONEncoder().encode(availableKeys),
+              let json = String(data: data, encoding: .utf8) else { return }
+        try? keychainService.save(password: json, for: "ssh_keys_metadata")
     }
 }
 

@@ -28,6 +28,7 @@ struct PTYTerminalView: UIViewRepresentable {
         // Track initial terminal size
         private var initialCols: Int = 80
         private var initialRows: Int = 24
+        private var hasStarted = false
 
         init(client: SSHClient, isConnected: Binding<Bool>) {
             self.client = client
@@ -42,10 +43,13 @@ struct PTYTerminalView: UIViewRepresentable {
 
         func sizeChanged(source: SwiftTerm.TerminalView, newCols: Int, newRows: Int) {
             guard newCols > 0, newRows > 0 else { return }
-            // Update stored size for initial PTY request
             initialCols = newCols
             initialRows = newRows
             events.continuation.yield(.changeSize(cols: newCols, rows: newRows))
+            if !hasStarted {
+                hasStarted = true
+                startConnection()
+            }
         }
 
         func setTerminalTitle(source: SwiftTerm.TerminalView, title: String) {}
@@ -140,11 +144,6 @@ struct PTYTerminalView: UIViewRepresentable {
         tv.nativeForegroundColor = UIColor.label
         tv.nativeBackgroundColor = UIColor.systemBackground
         context.coordinator.terminalView = tv
-
-        // Start connection after a brief delay to allow terminal to size
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            context.coordinator.startConnection()
-        }
 
         return tv
     }

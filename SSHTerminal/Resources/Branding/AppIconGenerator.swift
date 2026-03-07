@@ -1,3 +1,4 @@
+#if DEBUG
 //
 //  AppIconGenerator.swift
 //  SSHTerminal
@@ -78,3 +79,4 @@ extension Color {
 #Preview {
     AppIconDesign()
 }
+#endif

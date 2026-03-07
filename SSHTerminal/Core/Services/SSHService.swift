@@ -40,88 +40,58 @@ enum SSHError: Error, LocalizedError {
     }
 }
 
-// MARK: - Secure Host Key Validator
-
-/// Creates a host key validator for SSH connections
-/// Note: Citadel's SSHHostKeyValidator API requires using predefined validators
-/// For TOFU (Trust On First Use), we track host keys separately and use acceptAnything()
-/// since Citadel doesn't expose a custom callback-based validator publicly
-struct SecureHostKeyValidatorFactory {
-    private let hostKeyManager = HostKeyManager.shared
-    private let host: String
-    private let port: Int
-
-    init(host: String, port: Int) {
-        self.host = host
-        self.port = port
-    }
-
-    /// Create a host key validator
-    /// Note: Uses acceptAnything() as Citadel doesn't expose custom validation
-    /// Host key tracking is done separately via HostKeyManager
-    func createValidator(trustOnFirstUse: Bool) -> SSHHostKeyValidator {
-        // Log the validation mode
-        if trustOnFirstUse {
-            print("🔐 Host key validation: Trust on first use for \(host):\(port)")
-        } else {
-            print("🔐 Host key validation: Strict mode for \(host):\(port)")
-        }
-
-        // Note: Citadel's SSHHostKeyValidator only exposes .acceptAnything()
-        // Custom validation would require modifying Citadel or using a different approach
-        // For now, we track known hosts separately and warn on new connections
-        return .acceptAnything()
-    }
-}
-
 // MARK: - Host Key Management
 
 final class HostKeyManager: @unchecked Sendable {
     static let shared = HostKeyManager()
-
-    private let userDefaults = UserDefaults.standard
-    private let storageKey = "ssh_known_hosts"
+    private let keychain = KeychainService.shared
+    private let account = "ssh_known_hosts"
     private let queue = DispatchQueue(label: "com.sshterminal.hostkeymanager")
 
     private init() {}
 
-    /// Get stored fingerprint for a host
-    func getStoredFingerprint(for host: String, port: Int) -> String? {
-        queue.sync {
-            let knownHosts = userDefaults.dictionary(forKey: storageKey) as? [String: String] ?? [:]
-            return knownHosts["\(host):\(port)"]
+    private func load() -> [String: String] {
+        guard let json = try? keychain.retrieve(for: account),
+              let data = json.data(using: .utf8),
+              let dict = try? JSONDecoder().decode([String: String].self, from: data) else {
+            return [:]
         }
+        return dict
     }
 
-    /// Store fingerprint for a host
+    private func persist(_ dict: [String: String]) {
+        guard let data = try? JSONEncoder().encode(dict),
+              let json = String(data: data, encoding: .utf8) else { return }
+        try? keychain.save(password: json, for: account)
+    }
+
+    func getStoredFingerprint(for host: String, port: Int) -> String? {
+        queue.sync { load()["\(host):\(port)"] }
+    }
+
     func storeFingerprint(_ fingerprint: String, for host: String, port: Int) {
         queue.sync {
-            var knownHosts = userDefaults.dictionary(forKey: storageKey) as? [String: String] ?? [:]
-            knownHosts["\(host):\(port)"] = fingerprint
-            userDefaults.set(knownHosts, forKey: storageKey)
+            var hosts = load()
+            hosts["\(host):\(port)"] = fingerprint
+            persist(hosts)
         }
     }
 
-    /// Remove stored fingerprint
     func removeFingerprint(for host: String, port: Int) {
         queue.sync {
-            var knownHosts = userDefaults.dictionary(forKey: storageKey) as? [String: String] ?? [:]
-            knownHosts.removeValue(forKey: "\(host):\(port)")
-            userDefaults.set(knownHosts, forKey: storageKey)
+            var hosts = load()
+            hosts.removeValue(forKey: "\(host):\(port)")
+            persist(hosts)
         }
     }
 
-    /// List all known hosts
     func getAllKnownHosts() -> [String: String] {
-        queue.sync {
-            return userDefaults.dictionary(forKey: storageKey) as? [String: String] ?? [:]
-        }
+        queue.sync { load() }
     }
 
-    /// Clear all known hosts
     func clearAllKnownHosts() {
         queue.sync {
-            userDefaults.removeObject(forKey: storageKey)
+            try? keychain.delete(for: account)
         }
     }
 }
@@ -193,8 +163,8 @@ class SSHService: ObservableObject {
             }
 
             // Implement host key verification
-            let validatorFactory = SecureHostKeyValidatorFactory(host: server.host, port: server.port)
-            let hostValidator = validatorFactory.createValidator(trustOnFirstUse: trustHostKey)
+            let validator = SecureHostKeyValidator(host: server.host, port: server.port)
+            let hostValidator = validator.createValidator(trustOnFirstUse: trustHostKey)
 
             // Configure SSH client settings
             let settings = SSHClientSettings(
@@ -207,14 +177,6 @@ class SSHService: ObservableObject {
             // Connect to SSH server
             let client = try await SSHClient.connect(to: settings)
             clients[session.id] = client
-
-            // Store host key fingerprint for future verification
-            // This implements Trust On First Use (TOFU) pattern
-            if hostKeyManager.getStoredFingerprint(for: server.host, port: server.port) == nil {
-                // First connection - store a placeholder (actual fingerprint would come from Citadel)
-                hostKeyManager.storeFingerprint("trusted-\(Date().timeIntervalSince1970)", for: server.host, port: server.port)
-                session.appendOutput("⚠ New host - key fingerprint stored\n")
-            }
 
             // Update session state
             session.state = .connected

@@ -198,8 +198,7 @@ class SessionManager: ObservableObject {
             [
                 "id": session.id.uuidString,
                 "serverId": session.server.id.uuidString,
-                "serverName": session.server.name,
-                "output": session.output
+                "serverName": session.server.name
             ]
         }
         

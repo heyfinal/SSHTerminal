@@ -15,8 +15,9 @@ struct BackupSettingsView: View {
         List {
             Section {
                 Toggle("Enable iCloud Sync", isOn: $iCloudSync)
+                    .disabled(true)
             } footer: {
-                Text("Sync your settings and data across all your devices")
+                Text("iCloud sync is not yet available. Coming in a future update.")
             }
             
             if iCloudSync {
@@ -34,7 +35,7 @@ struct BackupSettingsView: View {
                     HStack {
                         Text("Last Sync")
                         Spacer()
-                        Text("Just now")
+                        Text("Never")
                             .foregroundColor(.secondary)
                     }
                 }

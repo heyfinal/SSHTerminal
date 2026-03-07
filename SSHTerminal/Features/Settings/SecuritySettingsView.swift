@@ -49,13 +49,17 @@ struct SecuritySettingsView: View {
             
             Section("Data Management") {
                 Button(role: .destructive) {
-                    // Clear saved credentials
+                    for server in ServerRepository.shared.servers {
+                        try? KeychainService.shared.delete(for: server.id.uuidString)
+                    }
                 } label: {
                     Label("Clear All Saved Passwords", systemImage: "trash")
                 }
-                
+
                 Button(role: .destructive) {
-                    // Clear SSH keys
+                    for key in SSHKeyManager.shared.availableKeys {
+                        try? SSHKeyManager.shared.deleteKey(key)
+                    }
                 } label: {
                     Label("Clear All SSH Keys", systemImage: "key.slash")
                 }
