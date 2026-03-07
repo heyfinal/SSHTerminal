@@ -113,9 +113,9 @@ See [AI Setup Guide](docs/AI_SETUP_GUIDE.md) for details.
 ### 3. Use the App
 
 1. **Add Server**: Tap **"+"** → Enter credentials
-2. **Connect**: Tap server to connect  
+2. **Connect**: Tap server to connect
 3. **Use AI**: Tap **⭐** → Type "show disk space"
-4. **Auto-execute**: Command runs automatically
+4. **Review & Run**: Confirm the generated command before execution
 
 ## 🎯 AI Command Examples
 
@@ -142,7 +142,6 @@ Type anything - the AI understands context!
 ## 📚 Documentation
 
 - **[AI Setup Guide](docs/AI_SETUP_GUIDE.md)** - Complete Ollama installation & configuration
-- **[Development History](docs/DEVELOPMENT_HISTORY.md)** - Project timeline and technical decisions
 - **Setup Scripts**:
   - `setup_ollama.sh` - Local installation
   - `setup_ollama_remote.sh` - Remote server setup
@@ -166,7 +165,7 @@ SSHTerminal/
 │       │   ├── TerminalView.swift    # Main terminal container
 │       │   └── PTYTerminalView.swift # SwiftTerm wrapper
 │       └── ViewModels/
-│           └── TerminalViewModel.swift
+│           └── SwiftTerminalViewModel.swift
 ```
 
 ### Key Technologies
@@ -223,7 +222,7 @@ Contributions welcome! Please:
 ## 🐛 Troubleshooting
 
 ### Terminal not wrapping correctly
-- Make sure you're using PTYTerminalView (not EnhancedTerminalView)
+- PTYTerminalView with SwiftTerm handles wrapping automatically
 - Check that SwiftTerm delegate is properly connected
 - Verify PTY session is created with proper dimensions
 
@@ -285,8 +284,8 @@ User Input → CommandAIService → Ollama (DeepSeek Coder) → Bash Command
 1. User taps ⭐ and types natural language
 2. CommandAIService sends to local Ollama server
 3. DeepSeek Coder 6.7B generates bash command
-4. Command auto-executes in terminal
-5. Results display in real-time
+4. User reviews and confirms the command
+5. Command executes in terminal with results in real-time
 
 **Speed:** ~1-2 seconds (local inference)  
 **Cost:** $0 (everything runs locally)

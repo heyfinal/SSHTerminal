@@ -68,7 +68,8 @@ Please provide:
 - ✅ Local processing (no data sent to cloud)
 - ✅ Ollama runs on local network
 - ✅ No API keys stored
-- ⚠️ Commands executed as-is (review before running)
+- ✅ Generated commands require user confirmation before execution
+- ⚠️ Always review AI-generated commands for correctness
 
 ### Data Storage
 - ✅ Passwords stored in iOS Keychain

@@ -17,8 +17,7 @@ struct TerminalView: View {
     @State private var showingSettings = false
     @State private var showingError = false
     @State private var errorMessage: String?
-    @StateObject private var aiService = AIService.shared
-    
+
     var body: some View {
         NavigationStack {
             ZStack {

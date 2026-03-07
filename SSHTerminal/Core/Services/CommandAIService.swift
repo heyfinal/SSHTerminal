@@ -118,18 +118,17 @@ class CommandAIService: ObservableObject {
     /// Common command templates (instant, no AI needed)
     func quickCommand(for keyword: String) -> String? {
         let templates: [String: String] = [
-            "network": "ip addr show",
-            "wifi": "iwconfig",
+            "network": "ip addr show 2>/dev/null || ifconfig",
             "disk": "df -h",
-            "memory": "free -h",
-            "cpu": "top -bn1 | head -20",
+            "memory": "free -h 2>/dev/null || vm_stat",
+            "cpu": "top -bn1 2>/dev/null | head -20 || top -l1 | head -20",
             "processes": "ps aux | head -20",
             "users": "who",
-            "ports": "netstat -tuln",
-            "logs": "tail -f /var/log/syslog",
+            "ports": "ss -tuln 2>/dev/null || netstat -an | grep LISTEN",
+            "logs": "journalctl -n 50 --no-pager 2>/dev/null || tail -50 /var/log/syslog 2>/dev/null || log show --last 5m --style compact | tail -50",
             "docker": "docker ps -a"
         ]
-        
+
         return templates[keyword.lowercased()]
     }
 }
