@@ -126,7 +126,7 @@ class SSHService: ObservableObject {
         password: String? = nil,
         keyInfo: SSHKeyInfo? = nil,
         keyPassphrase: String? = nil,
-        trustHostKey: Bool = false
+        trustHostKey: Bool = true
     ) async throws -> SSHSession {
         let session = SSHSession(server: server)
 
@@ -163,8 +163,8 @@ class SSHService: ObservableObject {
             }
 
             // Implement host key verification
-            let validator = SecureHostKeyValidator(host: server.host, port: server.port)
-            let hostValidator = validator.createValidator(trustOnFirstUse: trustHostKey)
+            let validator = SecureHostKeyValidator(host: server.host, port: server.port, trustOnFirstUse: trustHostKey)
+            let hostValidator = validator.createValidator()
 
             // Configure SSH client settings
             let settings = SSHClientSettings(

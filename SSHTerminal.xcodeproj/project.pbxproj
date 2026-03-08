@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,7 +18,6 @@
 		1E5D94C524FAF71E6E2ECA25 /* CommandHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E088EAFAED273BB6E46729 /* CommandHistory.swift */; };
 		229291190E84938F759D1D6C /* SSHTerminalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05855D883AD2B325FDB62E2 /* SSHTerminalApp.swift */; };
 		2BB364D0371426BD3C876D53 /* SessionTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A991E86255677E1930542A7 /* SessionTabView.swift */; };
-
 		3C4D1C96CFBD3BE767AE5968 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F38B771EF5864A90DB3D8 /* KeychainService.swift */; };
 		3F2A79ACA18C494E0AE15061 /* SecuritySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30885A762EC9965DF4F8B480 /* SecuritySettingsView.swift */; };
 		431109736B3FC49C6A27F618 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617BBF612D755D568BBB3525 /* LaunchScreenView.swift */; };
@@ -26,8 +25,6 @@
 		506B5A349A73578DDC114683 /* CommandSuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BF7D71C6D27352D673701 /* CommandSuggestionView.swift */; };
 		5456594884EAD1EF70FA6E59 /* PTYTerminalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FB4D4E28F909CC325A5B18 /* PTYTerminalView.swift */; settings = {COMPILER_FLAGS = "-Xfrontend -disable-actor-data-race-checks"; }; };
 		5E0B337AB036FD23B7798AFD /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AC849B048E1B57AC84294C /* AIService.swift */; };
-		A1B2C3D4E5F60718A9B0C1D2 /* SwiftTerminalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718A9B0C1D3 /* SwiftTerminalViewModel.swift */; };
-		B2C3D4E5F6071829A0B1C2D3 /* SecurityFixes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F6071829A0B1C2D4 /* SecurityFixes.swift */; };
 		5F42EC10A04323C31093B725 /* SnippetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F34BD7FC2E31A46C24D60F /* SnippetRepository.swift */; };
 		5FB73B08AEE28CCF09C20F7B /* AnimationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F7D3B5750D3E6FC5FAF6B3 /* AnimationConstants.swift */; };
 		60E9548A480CBD9B4908E9A8 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA67BC7F6D954AF9A1F45EB6 /* AppConfig.swift */; };
@@ -44,11 +41,12 @@
 		9395EEF284474B7643250B47 /* ErrorExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2156F6656DE4B6B910320D /* ErrorExplanationView.swift */; };
 		96CC14A04B716C0065FE5CCB /* Citadel in Frameworks */ = {isa = PBXBuildFile; productRef = GITHUB_CITADEL_REF /* Citadel */; };
 		9752EADB28F54CC881E692F5 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105E56C33AC2AD9FC044561C /* AboutView.swift */; };
-
 		9D05340B2441FDA32C5A9BE6 /* AccessibilityHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5383DD47AC09876F7037F41D /* AccessibilityHelpers.swift */; };
+		A1B2C3D4E5F60718A9B0C1D2 /* SwiftTerminalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718A9B0C1D3 /* SwiftTerminalViewModel.swift */; };
 		AF5F0F54C5652EA0A3D2B90E /* SSHSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87723E06DA549437D1FF2D36 /* SSHSession.swift */; };
 		B10873FD42E7398E27D72D4C /* TerminalKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C44FD628082559B6D017C1 /* TerminalKeyboardToolbar.swift */; };
 		B1747DA92FB7E11C017D5917 /* PortForwardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60178DEC163EB95264AC6991 /* PortForwardService.swift */; };
+		B2C3D4E5F6071829A0B1C2D3 /* SecurityFixes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F6071829A0B1C2D4 /* SecurityFixes.swift */; };
 		B4AFC77B128D5C96F1FEED13 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AAEA76CFAE2893D16FF963 /* SettingsView.swift */; };
 		B71B7F598B2FF223C050B60C /* TerminalEmulatorView.swift.disabled in Resources */ = {isa = PBXBuildFile; fileRef = B0EB3E835E04C2FCA30F2036 /* TerminalEmulatorView.swift.disabled */; };
 		B741170177B79760F093F1B0 /* TermsOfServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BDCEBDA49506DC1BBD0F02 /* TermsOfServiceView.swift */; };
@@ -64,7 +62,6 @@
 		D6F8D3B24FF080AF585B419C /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935820C0D15BDEFF59311DC1 /* SessionManager.swift */; };
 		DABD342C91CF87735361B4CB /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA540AA3EECBA5DD9D6251A /* WelcomeView.swift */; };
 		EE2C178F53943B3953F25262 /* BackupSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A1029E955AA1896268609C /* BackupSettingsView.swift */; };
-
 		F81A40958E41E663A6F5E2AC /* LicensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAB0F37210BEF184580B650 /* LicensesView.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,7 +84,7 @@
 		4C2F38B771EF5864A90DB3D8 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		4DE9CE374E659CFEE1A57260 /* AIAssistantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIAssistantView.swift; sourceTree = "<group>"; };
 		5383DD47AC09876F7037F41D /* AccessibilityHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityHelpers.swift; sourceTree = "<group>"; };
-		570D8870BECDE682409C514D /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		570D8870BECDE682409C514D /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		60178DEC163EB95264AC6991 /* PortForwardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortForwardService.swift; sourceTree = "<group>"; };
 		617BBF612D755D568BBB3525 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		65FB4D4E28F909CC325A5B18 /* PTYTerminalView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PTYTerminalView.swift; path = SSHTerminal/Features/Terminal/Views/PTYTerminalView.swift; sourceTree = SOURCE_ROOT; };
@@ -95,20 +92,21 @@
 		812DF43F726D0B4B2699DFDD /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		87723E06DA549437D1FF2D36 /* SSHSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSHSession.swift; sourceTree = "<group>"; };
 		87C44FD628082559B6D017C1 /* TerminalKeyboardToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalKeyboardToolbar.swift; sourceTree = "<group>"; };
-
 		935820C0D15BDEFF59311DC1 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		94A6E9F36ED7346334B3E20B /* PTYSession.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PTYSession.swift; sourceTree = "<group>"; };
 		9A991E86255677E1930542A7 /* SessionTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTabView.swift; sourceTree = "<group>"; };
 		9DEDACBE0B113EC3C75A9B11 /* ServerProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerProfile.swift; sourceTree = "<group>"; };
 		9F84E299A677FCD41F1EB4EB /* TerminalSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalSettingsView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60718A9B0C1D3 /* SwiftTerminalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTerminalViewModel.swift; sourceTree = "<group>"; };
 		A3B601D08B2B5AEDFE1E0EF9 /* CommandAIService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CommandAIService.swift; path = SSHTerminal/Core/Services/CommandAIService.swift; sourceTree = SOURCE_ROOT; };
 		A46E1BEAA1333114C111A6E9 /* SSHKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSHKeyManager.swift; sourceTree = "<group>"; };
 		A7867CE32A714DB626A2956D /* PortForwardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortForwardingView.swift; sourceTree = "<group>"; };
 		AA67BC7F6D954AF9A1F45EB6 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		AFEE4EC27E99A01A074D1219 /* TerminalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalView.swift; sourceTree = "<group>"; };
-		B0EB3E835E04C2FCA30F2036 /* TerminalEmulatorView.swift.disabled */ = {isa = PBXFileReference; path = TerminalEmulatorView.swift.disabled; sourceTree = "<group>"; };
+		B0EB3E835E04C2FCA30F2036 /* TerminalEmulatorView.swift.disabled */ = {isa = PBXFileReference; lastKnownFileType = text; path = TerminalEmulatorView.swift.disabled; sourceTree = "<group>"; };
 		B2BDCEBDA49506DC1BBD0F02 /* TermsOfServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceView.swift; sourceTree = "<group>"; };
-		B485DABB6ABDB9DD9681F7F7 /* FileBrowserView.swift.disabled */ = {isa = PBXFileReference; path = FileBrowserView.swift.disabled; sourceTree = "<group>"; };
+		B2C3D4E5F6071829A0B1C2D4 /* SecurityFixes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityFixes.swift; sourceTree = "<group>"; };
+		B485DABB6ABDB9DD9681F7F7 /* FileBrowserView.swift.disabled */ = {isa = PBXFileReference; lastKnownFileType = text; path = FileBrowserView.swift.disabled; sourceTree = "<group>"; };
 		B81A1F0485548BC3415AA7B3 /* ServerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRepository.swift; sourceTree = "<group>"; };
 		BD81E5BEF2E9734A59C3D727 /* ServerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListView.swift; sourceTree = "<group>"; };
 		C4F34BD7FC2E31A46C24D60F /* SnippetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetRepository.swift; sourceTree = "<group>"; };
@@ -116,15 +114,11 @@
 		CAFC33B7370EE3428AECF76E /* AISettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AISettingsView.swift; sourceTree = "<group>"; };
 		D05855D883AD2B325FDB62E2 /* SSHTerminalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSHTerminalApp.swift; sourceTree = "<group>"; };
 		D4F7D3B5750D3E6FC5FAF6B3 /* AnimationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationConstants.swift; sourceTree = "<group>"; };
-		D8871FCD18A27611B91DB82D /* SSHTerminal.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SSHTerminal.app; sourceTree = BUILT_PRODUCTS_DIR; };
-
+		D8871FCD18A27611B91DB82D /* SSHTerminal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSHTerminal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4A1029E955AA1896268609C /* BackupSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupSettingsView.swift; sourceTree = "<group>"; };
 		E9E088EAFAED273BB6E46729 /* CommandHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandHistory.swift; sourceTree = "<group>"; };
-
-		F56FE7607413648E3B9C060D /* SFTPService.swift.disabled */ = {isa = PBXFileReference; path = SFTPService.swift.disabled; sourceTree = "<group>"; };
+		F56FE7607413648E3B9C060D /* SFTPService.swift.disabled */ = {isa = PBXFileReference; lastKnownFileType = text; path = SFTPService.swift.disabled; sourceTree = "<group>"; };
 		F71E18B3C144AFE1CB9AED58 /* SSHService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSHService.swift; sourceTree = "<group>"; };
-		A1B2C3D4E5F60718A9B0C1D3 /* SwiftTerminalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTerminalViewModel.swift; sourceTree = "<group>"; };
-		B2C3D4E5F6071829A0B1C2D4 /* SecurityFixes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityFixes.swift; sourceTree = "<group>"; };
 		F77673B96D41ED823DB1522C /* AppearanceSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingsView.swift; sourceTree = "<group>"; };
 		FEAB0F37210BEF184580B650 /* LicensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensesView.swift; sourceTree = "<group>"; };
 		FEC9B438BEA3D41EA42811C1 /* OnboardingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingManager.swift; sourceTree = "<group>"; };
@@ -493,7 +487,6 @@
 				C9088F0D415CF5955D2F6608 /* XCRemoteSwiftPackageReference "SwiftTerm" */,
 				DE3AB3874DBCE10C1C3A65A8 /* XCRemoteSwiftPackageReference "Citadel" */,
 			);
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 9FE12FA91B590D7AC4C9299F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -703,7 +696,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KNK8WQ45YL;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				INFOPLIST_FILE = SSHTerminal/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -713,6 +708,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.sshterminal;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_STRICT_CONCURRENCY = minimal;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -724,7 +721,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KNK8WQ45YL;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				INFOPLIST_FILE = SSHTerminal/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -734,6 +733,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.sshterminal;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_STRICT_CONCURRENCY = minimal;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -762,16 +763,6 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
-/* Begin XCRemoteSwiftPackageReference section */
-		GITHUB_CITADEL_REF /* XCRemoteSwiftPackageReference "Citadel" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/heyfinal/Citadel.git";
-			requirement = {
-				branch = "pty-public-api";
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
 		A55D5FD92D9603F7E6E07BE2 /* XCRemoteSwiftPackageReference "Citadel" */ = {
@@ -801,15 +792,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		GITHUB_CITADEL_REF /* Citadel */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A55D5FD92D9603F7E6E07BE2 /* XCRemoteSwiftPackageReference "Citadel" */;
-			productName = Citadel;
-		};
 		70F001191F279ED7C7A52B0E /* SwiftTerm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C9088F0D415CF5955D2F6608 /* XCRemoteSwiftPackageReference "SwiftTerm" */;
 			productName = SwiftTerm;
+		};
+		GITHUB_CITADEL_REF /* Citadel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A55D5FD92D9603F7E6E07BE2 /* XCRemoteSwiftPackageReference "Citadel" */;
+			productName = Citadel;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
