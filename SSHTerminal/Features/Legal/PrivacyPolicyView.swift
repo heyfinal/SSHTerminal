@@ -39,12 +39,7 @@ struct PrivacyPolicyView: View {
                     }
                     
                     SectionView(title: "Third-Party Services") {
-                        Text("If you enable AI features:")
-                        BulletPoint("Commands may be sent to OpenAI or Anthropic for suggestions")
-                        BulletPoint("You control which data is shared")
-                        BulletPoint("AI providers have their own privacy policies")
-                        
-                        Text("\nIf you enable iCloud sync:")
+                        Text("If you enable iCloud sync:")
                         BulletPoint("Data is encrypted and stored in your iCloud account")
                         BulletPoint("Subject to Apple's iCloud terms and privacy policy")
                     }

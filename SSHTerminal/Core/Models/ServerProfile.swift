@@ -22,7 +22,11 @@ struct ServerProfile: Identifiable, Codable, Equatable {
     var privateKeyPath: String?
     var createdAt: Date
     var lastConnectedAt: Date?
-    
+    var savedPassword: Bool
+
+    /// Keychain account key for the stored password
+    var passwordKeychainKey: String { "ssh_pwd_\(id.uuidString)" }
+
     init(
         id: UUID = UUID(),
         name: String,
@@ -32,7 +36,8 @@ struct ServerProfile: Identifiable, Codable, Equatable {
         authType: AuthType = .password,
         privateKeyPath: String? = nil,
         createdAt: Date = Date(),
-        lastConnectedAt: Date? = nil
+        lastConnectedAt: Date? = nil,
+        savedPassword: Bool = false
     ) {
         self.id = id
         self.name = name
@@ -43,6 +48,7 @@ struct ServerProfile: Identifiable, Codable, Equatable {
         self.privateKeyPath = privateKeyPath
         self.createdAt = createdAt
         self.lastConnectedAt = lastConnectedAt
+        self.savedPassword = savedPassword
     }
     
     var displayAddress: String {

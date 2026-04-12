@@ -11,6 +11,10 @@ struct PTYTerminalView: UIViewRepresentable {
 
     let client: SSHClient
     @Binding var isConnected: Bool
+    /// Called with each byte slice the user sends to the PTY (for autocomplete tracking)
+    var onUserInput: (([UInt8]) -> Void)?
+    /// Expose a way to inject bytes from autocomplete into the PTY
+    var injectSink: ((([UInt8]) -> Void) -> Void)?
 
     enum Event: Sendable {
         case send(ByteBuffer)
@@ -18,14 +22,14 @@ struct PTYTerminalView: UIViewRepresentable {
     }
 
     final class Coordinator: NSObject, TerminalViewDelegate, @unchecked Sendable {
-        // Use nonisolated(unsafe) for non-Sendable Citadel type
         nonisolated(unsafe) let client: SSHClient
         nonisolated(unsafe) var terminalView: SwiftTerm.TerminalView?
         private let events = AsyncStream<Event>.makeStream()
         let isConnected: Binding<Bool>
         private var connectionTask: Task<Void, Never>?
 
-        // Track initial terminal size
+        var onUserInput: (([UInt8]) -> Void)?
+
         private var initialCols: Int = 80
         private var initialRows: Int = 24
         private var hasStarted = false
@@ -56,6 +60,9 @@ struct PTYTerminalView: UIViewRepresentable {
         func hostCurrentDirectoryUpdate(source: SwiftTerm.TerminalView, directory: String?) {}
 
         func send(source: SwiftTerm.TerminalView, data: ArraySlice<UInt8>) {
+            // Track input for autocomplete before sending to PTY
+            let bytes = Array(data)
+            onUserInput?(bytes)
             events.continuation.yield(.send(ByteBuffer(bytes: data)))
         }
 
@@ -65,11 +72,15 @@ struct PTYTerminalView: UIViewRepresentable {
         func requestOpenLink(source: SwiftTerm.TerminalView, link: String, params: [String: String]) {}
 
         func bell(source: SwiftTerm.TerminalView) {
-            // Provide haptic feedback for bell
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
         }
 
         func iTermContent(source: SwiftTerm.TerminalView, content: ArraySlice<UInt8>) {}
+
+        /// Inject bytes directly into the PTY stream (for autocomplete insertion)
+        func injectBytes(_ bytes: [UInt8]) {
+            events.continuation.yield(.send(ByteBuffer(bytes: bytes)))
+        }
 
         func startConnection() {
             connectionTask = Task { [weak self] in
@@ -86,7 +97,6 @@ struct PTYTerminalView: UIViewRepresentable {
         }
 
         func run() async throws {
-            // Use reasonable default dimensions instead of 0
             let ptyRequest = SSHChannelRequestEvent.PseudoTerminalRequest(
                 wantReply: true,
                 term: "xterm-256color",
@@ -99,7 +109,6 @@ struct PTYTerminalView: UIViewRepresentable {
 
             try await client.withPTY(ptyRequest) { inbound, outbound in
                 try await withThrowingTaskGroup(of: Void.self) { group in
-                    // Task for receiving output from SSH server
                     group.addTask { [weak self] in
                         guard let self = self else { return }
                         for try await input in inbound {
@@ -114,7 +123,6 @@ struct PTYTerminalView: UIViewRepresentable {
                         }
                     }
 
-                    // Task for sending user input to SSH server
                     group.addTask { [weak self] in
                         guard let self = self else { return }
                         for await event in self.events.stream {
@@ -123,10 +131,8 @@ struct PTYTerminalView: UIViewRepresentable {
                                 try await outbound.write(buffer)
                             case .changeSize(let cols, let rows):
                                 try await outbound.changeSize(
-                                    cols: cols,
-                                    rows: rows,
-                                    pixelWidth: 0,
-                                    pixelHeight: 0
+                                    cols: cols, rows: rows,
+                                    pixelWidth: 0, pixelHeight: 0
                                 )
                             }
                         }
@@ -144,6 +150,13 @@ struct PTYTerminalView: UIViewRepresentable {
         tv.nativeForegroundColor = UIColor.label
         tv.nativeBackgroundColor = UIColor.systemBackground
         context.coordinator.terminalView = tv
+        context.coordinator.onUserInput = onUserInput
+
+        // Give the caller a closure to inject bytes into the PTY
+        let coordinator = context.coordinator
+        injectSink?({ bytes in
+            coordinator.injectBytes(bytes)
+        })
 
         return tv
     }

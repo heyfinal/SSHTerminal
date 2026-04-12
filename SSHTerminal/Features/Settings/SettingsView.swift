@@ -41,15 +41,6 @@ struct SettingsView: View {
                 }
                 
                 Section {
-                    NavigationLink(destination: AISettingsView()) {
-                        SettingsRow(
-                            icon: "brain.head.profile",
-                            iconColor: .pink,
-                            title: "AI Assistant",
-                            subtitle: "API keys, models"
-                        )
-                    }
-                    
                     NavigationLink(destination: BackupSettingsView()) {
                         SettingsRow(
                             icon: "icloud.fill",
