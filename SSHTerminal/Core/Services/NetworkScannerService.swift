@@ -46,6 +46,28 @@ class NetworkScannerService: ObservableObject {
         isScanning = false
     }
 
+    // Thread-safe box to finish a continuation exactly once
+    private final class FinishBox: @unchecked Sendable {
+        private let lock = NSLock()
+        private var done = false
+        private let continuation: CheckedContinuation<DiscoveredHost?, Never>
+        private let connection: NWConnection
+
+        init(continuation: CheckedContinuation<DiscoveredHost?, Never>, connection: NWConnection) {
+            self.continuation = continuation
+            self.connection = connection
+        }
+
+        func finish(_ result: DiscoveredHost?) {
+            lock.lock()
+            defer { lock.unlock() }
+            guard !done else { return }
+            done = true
+            connection.cancel()
+            continuation.resume(returning: result)
+        }
+    }
+
     private func runScan() async {
         guard let subnet = localSubnet() else { return }
 
@@ -87,22 +109,15 @@ class NetworkScannerService: ObservableObject {
                 port: 22,
                 using: .tcp
             )
-            var finished = false
-
-            let finish: (DiscoveredHost?) -> Void = { result in
-                guard !finished else { return }
-                finished = true
-                connection.cancel()
-                continuation.resume(returning: result)
-            }
+            let box = FinishBox(continuation: continuation, connection: connection)
 
             connection.stateUpdateHandler = { state in
                 switch state {
                 case .ready:
-                    let host = DiscoveredHost(ip: ip, hostname: Self.reverseDNS(ip: ip))
-                    finish(host)
+                    let hostname = reverseDNS(ip: ip)
+                    box.finish(DiscoveredHost(ip: ip, hostname: hostname))
                 case .failed, .cancelled:
-                    finish(nil)
+                    box.finish(nil)
                 default:
                     break
                 }
@@ -110,16 +125,15 @@ class NetworkScannerService: ObservableObject {
 
             connection.start(queue: .global(qos: .utility))
 
-            // 2-second timeout
             DispatchQueue.global(qos: .utility).asyncAfter(deadline: .now() + 2.0) {
-                finish(nil)
+                box.finish(nil)
             }
         }
     }
 
     // MARK: - Reverse DNS
 
-    private static func reverseDNS(ip: String) -> String? {
+    private nonisolated static func reverseDNS(ip: String) -> String? {
         var hints = addrinfo()
         hints.ai_flags = AI_NUMERICHOST
         hints.ai_socktype = SOCK_STREAM

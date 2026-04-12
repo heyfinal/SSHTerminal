@@ -14,7 +14,7 @@ struct PTYTerminalView: UIViewRepresentable {
     /// Called with each byte slice the user sends to the PTY (for autocomplete tracking)
     var onUserInput: (([UInt8]) -> Void)?
     /// Expose a way to inject bytes from autocomplete into the PTY
-    var injectSink: ((([UInt8]) -> Void) -> Void)?
+    var injectSink: ((@escaping ([UInt8]) -> Void) -> Void)?
 
     enum Event: Sendable {
         case send(ByteBuffer)

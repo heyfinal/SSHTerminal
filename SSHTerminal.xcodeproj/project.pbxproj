@@ -178,6 +178,7 @@
 				AFEE4EC27E99A01A074D1219 /* TerminalView.swift */,
 				65FB4D4E28F909CC325A5B18 /* PTYTerminalView.swift */,
 			
+			
 				DDD10A6B4CF342A1BADA5E37 /* AutocompleteBarView.swift */,
 			);
 			path = Views;
@@ -246,6 +247,8 @@
 				94A6E9F36ED7346334B3E20B /* PTYSession.swift */,
 				A3B601D08B2B5AEDFE1E0EF9 /* CommandAIService.swift */,
 				B2C3D4E5F6071829A0B1C2D4 /* SecurityFixes.swift */,
+			
+			
 			
 				6AE2FAEB10F0A027024A7354 /* BashAutocompleteService.swift */,
 			
@@ -340,10 +343,7 @@
 		C1EA33C82BAA67FA816F40E7 /* AI */ = {
 			isa = PBXGroup;
 			children = (
-				0F02F66E717DBF1B6EF91C25 /* Views */,
-			
-				29BACA851C584ECC8F95231B /* NetworkScanView.swift */,
-			);
+				0F02F66E717DBF1B6EF91C25 /* Views */,);
 			path = AI;
 			sourceTree = "<group>";
 		};
@@ -402,6 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				BD81E5BEF2E9734A59C3D727 /* ServerListView.swift */,
+				29BACA851C584ECC8F95231B /* NetworkScanView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -523,13 +524,13 @@
 				49129304CAA9EF9245CA04FD /* SFTPService.swift.disabled in Resources */,
 				B71B7F598B2FF223C050B60C /* TerminalEmulatorView.swift.disabled in Resources */,
 			
-				92E3E81324B9B15F8BE97FAE /* BashAutocompleteService.swift in Sources */,
 			
-				B7791DF2156AF85A90B84806 /* NetworkScannerService.swift in Sources */,
 			
-				1EC1009FBDAFAE9E97655D29 /* AutocompleteBarView.swift in Sources */,
 			
-				F5EEA0339AAF3B2FAFB93917 /* NetworkScanView.swift in Sources */,
+			
+			
+			
+			
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,7 +589,11 @@
 				173E326796F58A518600B199 /* CommandAIService.swift in Sources */,
 				A1B2C3D4E5F60718A9B0C1D2 /* SwiftTerminalViewModel.swift in Sources */,
 				B2C3D4E5F6071829A0B1C2D3 /* SecurityFixes.swift in Sources */,
-			);
+			
+				92E3E81324B9B15F8BE97FAE /* BashAutocompleteService.swift in Sources */,
+				B7791DF2156AF85A90B84806 /* NetworkScannerService.swift in Sources */,
+				1EC1009FBDAFAE9E97655D29 /* AutocompleteBarView.swift in Sources */,
+				F5EEA0339AAF3B2FAFB93917 /* NetworkScanView.swift in Sources */,);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
