@@ -36,9 +36,9 @@ struct WelcomeView: View {
                     .tag(1)
                     
                     FeaturePageView(
-                        icon: "brain.head.profile",
-                        title: "AI Powered",
-                        description: "Smart command suggestions and error help. Let AI assist your workflow with intelligent recommendations."
+                        icon: "terminal",
+                        title: "Smart Terminal",
+                        description: "Bash autocomplete, command history, and a full keyboard toolbar built for mobile. Work faster from anywhere."
                     )
                     .tag(2)
                     
@@ -108,15 +108,10 @@ struct WelcomePageView: View {
         VStack(spacing: 30) {
             Spacer()
             
-            Image(systemName: icon)
-                .font(.system(size: 100, weight: .bold))
-                .foregroundStyle(
-                    LinearGradient(
-                        colors: [Color(hex: "00f2fe"), Color(hex: "4facfe")],
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    )
-                )
+            Image("OwlWinking")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 120, height: 120)
             
             VStack(spacing: 12) {
                 Text(title)

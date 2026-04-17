@@ -33,15 +33,10 @@ struct LaunchScreenView: View {
                         .scaleEffect(isAnimating ? 1.2 : 0.8)
                         .opacity(isAnimating ? 0.5 : 1)
                     
-                    Image(systemName: "lock.shield.fill")
-                        .font(.system(size: 80, weight: .bold))
-                        .foregroundStyle(
-                            LinearGradient(
-                                colors: [Color(hex: "00f2fe"), Color(hex: "4facfe")],
-                                startPoint: .topLeading,
-                                endPoint: .bottomTrailing
-                            )
-                        )
+                    Image("OwlWinking")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 100, height: 100)
                         .scaleEffect(isAnimating ? 1.0 : 0.8)
                 }
                 
