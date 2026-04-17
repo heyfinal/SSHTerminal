@@ -9,6 +9,7 @@ import Foundation
 import Combine
 @preconcurrency import Citadel
 import NIO
+@preconcurrency import NIOSSH
 import CryptoKit
 
 enum SSHError: Error, LocalizedError {
@@ -96,6 +97,35 @@ final class HostKeyManager: @unchecked Sendable {
     }
 }
 
+final class PermissivePasswordDelegate: NIOSSHClientUserAuthenticationDelegate, @unchecked Sendable {
+    private let username: String
+    private let password: String
+    private var attempts = 0
+
+    init(username: String, password: String) {
+        self.username = username
+        self.password = password
+    }
+
+    func nextAuthenticationType(
+        availableMethods: NIOSSHAvailableUserAuthenticationMethods,
+        nextChallengePromise: EventLoopPromise<NIOSSHUserAuthenticationOffer?>
+    ) {
+        if attempts > 0 {
+            nextChallengePromise.succeed(nil)
+            return
+        }
+        attempts += 1
+        nextChallengePromise.succeed(
+            NIOSSHUserAuthenticationOffer(
+                username: username,
+                serviceName: "",
+                offer: .password(.init(password: password))
+            )
+        )
+    }
+}
+
 @MainActor
 class SSHService: ObservableObject {
     static let shared = SSHService()
@@ -142,19 +172,18 @@ class SSHService: ObservableObject {
                 guard let pwd = password else {
                     throw SSHError.authenticationFailed
                 }
-                authMethod = SSHAuthenticationMethod.passwordBased(username: server.username, password: pwd)
+                let delegate = PermissivePasswordDelegate(username: server.username, password: pwd)
+                authMethod = SSHAuthenticationMethod.custom(delegate)
 
             case .publicKey:
                 guard let keyInfo = keyInfo else {
                     throw SSHError.invalidConfiguration
                 }
-                // Load the private key from keychain via SSHKeyManager
                 let keyManager = SSHKeyManager.shared
                 guard let keyData = try? keyManager.loadKeyData(for: keyInfo, passphrase: keyPassphrase),
                       let privateKeyString = String(data: keyData, encoding: .utf8) else {
                     throw SSHError.invalidConfiguration
                 }
-                // Use Citadel's RSA authentication with the raw key
                 let privateKey = try Insecure.RSA.PrivateKey(sshRsa: privateKeyString)
                 authMethod = SSHAuthenticationMethod.rsa(
                     username: server.username,
@@ -187,9 +216,10 @@ class SSHService: ObservableObject {
             return session
         } catch {
             session.state = .failed(error)
-            session.appendOutput("✗ Connection failed: \(error.localizedDescription)\n")
+            let detail = "\(type(of: error)).\(error)"
+            session.appendOutput("✗ Connection failed: \(detail)\n")
             activeSessions.removeValue(forKey: session.id)
-            throw SSHError.connectionFailed(error.localizedDescription)
+            throw SSHError.connectionFailed(detail)
         }
     }
 
